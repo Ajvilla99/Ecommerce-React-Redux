@@ -49,7 +49,7 @@ export const Footer = () => {
                 <PiAppleLogoFill className="text-[30px]"/>
               <div className="flex flex-col">
                 <span className="text-[12px]">Download on the</span>
-                <span className="text-[16px]">App Store</span>
+                <span className="text-[16px] font-semibold">App Store</span>
               </div>
               </Link>
             </li>
@@ -58,7 +58,7 @@ export const Footer = () => {
                 <IoLogoGooglePlaystore className="text-[30px]"/>
               <div className="flex flex-col text">
                 <span className="text-[12px]">GET IN ON</span>
-                <span className="text-[16px]">Google Play</span>
+                <span className="text-[16px] font-semibold">Google Play</span>
               </div>
               </Link>
             </li>

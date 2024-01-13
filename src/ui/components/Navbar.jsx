@@ -9,7 +9,7 @@ import { HiOutlineArrowLeft, HiOutlineShoppingBag } from "react-icons/hi2";
 import { FiUser, FiHeart } from "react-icons/fi";
 import { RiNotification2Line } from "react-icons/ri";
 import { LiaHeadsetSolid } from "react-icons/lia";
-import { IoIosArrowDown, IoIosHeartEmpty } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -69,7 +69,7 @@ export const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className={`absolute overflow-hidden h-screen left-0 top-0 bg-black bg-opacity-80 duration-200 lg:hidden
+      <div className={`absolute overflow-hidden h-screen left-0 top-0 bg-black bg-opacity-80 duration-200 lg:hidden z-10
                        ${ menuOpen ? 'w-full' : 'w-0'}`}>
         <div className='w-9/12 h-full bg-gray-300 flex flex-col'>
             <div className='w-full p-5 bg-menu-primary flex items-center justify-center'>
