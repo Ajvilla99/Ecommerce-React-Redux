@@ -9,7 +9,7 @@ import { HiOutlineArrowLeft, HiOutlineShoppingBag } from "react-icons/hi2";
 import { FiUser, FiHeart } from "react-icons/fi";
 import { RiNotification2Line } from "react-icons/ri";
 import { LiaHeadsetSolid } from "react-icons/lia";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -24,63 +24,65 @@ export const Navbar = () => {
   return (
     <header className='w-full'>
       {/* Navbar Mobile */}
-      <div className={`w-full h-14 bg-menu-primary px-2 flex items-center ${ isFocused ? 'justify-center' : 'justify-between' } lg:hidden`}>
-        <div className='w-10 flex justify-center items-center'>
-          <button 
-            onClick={() => setMenuOpen(true)}
-            className='w-full h-10 flex items-center justify-center'>
-            <AiOutlineMenu size={28} color='white'/>
-          </button>
-        </div>
-        <form className={`w-[calc(100%-100px)] flex justify-center items-center duration-200
-                         ${ isFocused ? 'absolute w-screen h-14' : 'relative h-10' }`}>
-            <input 
-              onFocus={() => setIsFocused(true)}
-              // onBlur={() => setIsFocused(false)}
-              type='text'
-              placeholder='Buscar producto...'
-              className='outline-none rounded w-full h-full indent-11 duration-100
-                          focus:h-14 focus:rounded-none focus:indent-16'/>
-            <button className={`absolute w-10 h-10 left-0 top-0 flex items-center justify-center duration-100 
-                                ${ isFocused ? 'hidden' : '' }`}>
-              <IoSearchSharp size={20} color='gray'/>
+      <div className={`w-full pt-2 bg-menu-primary flex flex-col items-center lg:hidden`}>
+        <div className='w-11/12 h-12 flex items-center justify-between gap-3'>
+            <button 
+              onClick={() => setMenuOpen(true)}
+              className='text-primary-light h-10 w-10 flex items-center justify-center'>
+              <AiOutlineMenu size={24}/>
             </button>
-            {
-              isFocused && 
-                <button 
-                  onClick={() => setIsFocused(false) }
-                  className='w-12 h-12 flex items-center justify-center  absolute left-0'>
-                  <HiOutlineArrowLeft size={28} color='gray'/>
-                </button>
-            }
-            {
-              isFocused && 
-                <div className='absolute w-full min-h-[10vh] top-14 left-0'>
+            <form className={`flex flex-row-reverse 
+                            ${ isFocused ? 'absolute left-0 top-0 w-screen h-14 duration-300' : 'w-3/5' }`}>
+              <button 
+                onClick={() => setIsFocused(false)}
+                type='button' className={`${ isFocused ? 'absolute left-0 top-0 h-14 w-14 flex items-center justify-center' : 'hidden' }`}>
+                <HiOutlineArrowLeft size={24}/>
+              </button>
+              <input type="search" 
+                    onFocus={() => setIsFocused(true)}
+                    className={`outline-none
+                                              ${ isFocused ? 'rounded-none w-full indent-14' : 'rounded-r-md w-[calc(100%-40px)]' }`}/>
+              <button className={`rounded-l-md h-10 w-10 bg-primary-light text-primary flex items-center justify-center
+                                ${ isFocused ? 'hidden' : '' }`}>
+                <IoSearchSharp size={24}/>
+              </button>
+              {
+                isFocused && <div className='absolute w-screen h-screen bg-gray-200 left-0 top-14 z-30'>
                   <ItemSearch />
                   <ItemSearch />
                   <ItemSearch />
                   <ItemSearch />
                 </div>
-            }
-        </form> 
-        <div className='w-10 flex justify-center items-center'>
-          <Link to={'cart'} className='w-full h-10 flex items-center justify-center'>
-            <BsCart3 size={26} color='white'/>
+              }
+            </form>
+            <div className='flex gap-2'>
+              <button className='w-10 h-10 text-primary-light flex items-center justify-center rounded-md'>
+                <RiNotification2Line size={22}/>
+              </button>
+              <button className='w-10 h-10 text-primary-light flex items-center justify-center rounded-md'>
+                <BsCart3 size={22}/>
+              </button>
+            </div>
+        </div>
+        <div className='w-full h-10 pr-2 flex items-center justify-center relative text-primary-light'>
+          <Link className='w-11/12 h-10  flex items-center pl-2 gap-1'>
+              <IoLocationOutline size={16}/>
+              <p className='text-sm'>117 #10k-28</p>
           </Link>
         </div>
       </div>
       <div className={`absolute overflow-hidden h-screen left-0 top-0 bg-black bg-opacity-80 duration-200 lg:hidden z-10
-                       ${ menuOpen ? 'w-full' : 'w-0'}`}>
+                       ${ menuOpen ? 'w-full z-30' : 'w-0'}`}>
         <div className='w-9/12 h-full bg-gray-300 flex flex-col'>
             <div className='w-full p-5 bg-menu-primary flex items-center justify-center'>
                 <button className='w-full flex gap-3'>
                   <div className='w-12 h-12 flex items-center justify-center rounded-full bg-white'>
                     <FiUser size={28}/>
                   </div>
-                  <div className='flex w-8/12 flex-col h-12 gap-0 text-left justify-center'>
+                  <Link to={'/login'} className='flex w-8/12 flex-col h-12 gap-0 text-left justify-center'>
                       <span className='first-letter:uppercase font-semibold'>iniciar sesion</span>
                       <span className='text-xs flex items-center gap-0'>Mi perfil <MdKeyboardArrowRight size={16}/></span>
-                  </div>
+                  </Link>
                 </button>
             </div>
             {/* Navbar */}

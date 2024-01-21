@@ -1,10 +1,11 @@
 import React from 'react'
 import { HiArrowUpLeft } from "react-icons/hi2";
 import { MdOutlineWatchLater } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 export const ItemSearch = () => {
   return (
-    <div className='w-full h-14 bg-gray-200 flex justify-between items-center px-4'>
+    <Link className='w-full h-12 bg-gray-200 flex justify-between items-center px-4 z-30'>
         <div className='w-10 flex items-center justify-center'>
             <MdOutlineWatchLater size={20} color='gray'/>
         </div>
@@ -14,6 +15,6 @@ export const ItemSearch = () => {
         <div className='w-10 flex items-center justify-center'>
             <HiArrowUpLeft size={18} color='gray'/>
         </div>
-    </div>
+    </Link>
   )
 }
