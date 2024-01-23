@@ -26,7 +26,6 @@ export const Carrousel = () => {
       prueba.current.scrollBy(-width, 0);
   }
   const btnNext = () => {
-    console.log(width)
       prueba.current.scrollBy(width, 0);
   }
 

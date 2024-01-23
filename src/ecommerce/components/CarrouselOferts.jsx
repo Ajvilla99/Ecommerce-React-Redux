@@ -6,7 +6,7 @@ export const CarrouselOferts = () => {
   return (
     <section className='w-full flex items-center justify-center mt-5'>
         <div className='w-11/12 flex gap-[1px] flex-col items-center justify-center rounded-md overflow-hidden
-                        lg:max-w-[380px] lg:gap-0'>
+                        lg:max-w-[380px] lg:min-w-[300px] lg:gap-0'>
             <div className='w-full h-14 px-5 flex items-center bg-white'>
                 <h3 className='font-semibold text-lg'>Oferta del dia</h3>
             </div>

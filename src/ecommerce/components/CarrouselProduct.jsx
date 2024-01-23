@@ -1,96 +1,179 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { FaAngleLeft } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import { ProductCard } from './ProductCard';
 
 
 const products = [
   {
     "id": 1,
-    "nombre": "Camiseta básica",
-    "precio": 19.99,
+    "name": "Lavadora Samsung 22kg Panel Multicontrol Negra | Wf22c6400av Color Negro 110v",
+    "price": "3.099.900",
     "descripcion": "Una cómoda camiseta de algodón en colores variados.",
-    "imagen": "https://ejemplo.com/camiseta.jpg"
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp"
   },
   {
     "id": 2,
-    "nombre": "Zapatos deportivos",
-    "precio": 49.99,
+    "name": "Filtro Purificador Agua Bioenergetico Ecotrade 28 Litros",
+    "price": "185.380",
     "descripcion": "Zapatos para correr con suela amortiguadora y diseño moderno.",
-    "imagen": "https://ejemplo.com/zapatos.jpg"
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_868154-MCO73494261492_122023-AB.webp"
   },
   {
     "id": 3,
-    "nombre": "Mochila resistente",
-    "precio": 39.99,
+    "name": "Asador Ahumador Barril Mini",
+    "price": "377.223",
     "descripcion": "Una mochila espaciosa y duradera para el día a día.",
-    "imagen": "https://ejemplo.com/mochila.jpg"
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_766582-MLA73075460021_112023-AB.webp"
   },
   {
     "id": 4,
-    "nombre": "Reloj inteligente",
-    "precio": 89.99,
+    "name": "Monitor Led De 24 Con Panel Ips Y Diseño Sin Bordes Color Black 100V/240V",
+    "price": "501.000",
     "descripcion": "Un reloj con funciones inteligentes y pantalla táctil.",
-    "imagen": "https://ejemplo.com/reloj.jpg"
-  }
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_992802-MLU72746216408_112023-AB.webp"
+  },
+  {
+    "id": 5,
+    "name": "Lavadora Samsung 22kg Panel Multicontrol Negra | Wf22c6400av Color Negro 110v",
+    "price": "3.099.900",
+    "descripcion": "Una cómoda camiseta de algodón en colores variados.",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp"
+  },
+  {
+    "id": 6,
+    "name": "Filtro Purificador Agua Bioenergetico Ecotrade 28 Litros",
+    "price": "185.380",
+    "descripcion": "Zapatos para correr con suela amortiguadora y diseño moderno.",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_868154-MCO73494261492_122023-AB.webp"
+  },
+  {
+    "id": 7,
+    "name": "Lavadora Samsung 22kg Panel Multicontrol Negra | Wf22c6400av Color Negro 110v",
+    "price": "3.099.900",
+    "descripcion": "Una cómoda camiseta de algodón en colores variados.",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp"
+  },
+  {
+    "id": 8,
+    "name": "Filtro Purificador Agua Bioenergetico Ecotrade 28 Litros",
+    "price": "185.380",
+    "descripcion": "Zapatos para correr con suela amortiguadora y diseño moderno.",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_868154-MCO73494261492_122023-AB.webp"
+  },
+  {
+    "id": 9,
+    "name": "Asador Ahumador Barril Mini",
+    "price": "377.223",
+    "descripcion": "Una mochila espaciosa y duradera para el día a día.",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_766582-MLA73075460021_112023-AB.webp"
+  },
+  {
+    "id": 10,
+    "name": "Monitor Led De 24 Con Panel Ips Y Diseño Sin Bordes Color Black 100V/240V",
+    "price": "501.000",
+    "descripcion": "Un reloj con funciones inteligentes y pantalla táctil.",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_992802-MLU72746216408_112023-AB.webp"
+  },
+  {
+    "id": 11,
+    "name": "Lavadora Samsung 22kg Panel Multicontrol Negra | Wf22c6400av Color Negro 110v",
+    "price": "3.099.900",
+    "descripcion": "Una cómoda camiseta de algodón en colores variados.",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp"
+  },
+  {
+    "id": 12,
+    "name": "Filtro Purificador Agua Bioenergetico Ecotrade 28 Litros",
+    "price": "185.380",
+    "descripcion": "Zapatos para correr con suela amortiguadora y diseño moderno.",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_868154-MCO73494261492_122023-AB.webp"
+  },
 ]
 
-export const CarrouselProduct = () => {
+export const CarrouselProduct = ({ fullScreen, itemPagina }) => {
+
+    const carrousel = useRef(null);
+
+    const [ width, setWidth ] = useState({})
+
+    const scroll_prev = () => { carrousel.current.scrollBy(-300,0) }
+    const scroll_next = () => { carrousel.current.scrollBy(300,0) }
+
+    useEffect(() => {
+      const rect = carrousel.current
+
+      if (rect) {
+        const widthCarrousel = rect.getBoundingClientRect();
+        setWidth(widthCarrousel)
+      }
+
+    },[width.width]);
+
+    // Pagination
+
+    const [paginaActual, setPaginaActual] = useState(1)
+
+    function dividirArrayEnGrupos(array, tamanoGrupo) {
+      const grupos = [];
+      for (let i = 0; i < array.length; i += tamanoGrupo) {
+        const grupo = array.slice(i, i + tamanoGrupo);
+        grupos.push(grupo);
+      }
+      return grupos;
+    }
+
+    const prueba = dividirArrayEnGrupos(products, itemPagina);
+
+
+    // prueba.forEach((grupo, indiceGrupo) => {
+    //   console.log(`Grupo ${indiceGrupo + 1}:`, grupo);
+    
+    //   // Acceder a los productos dentro de cada grupo
+    //   grupo.forEach((producto, indiceProducto) => {
+    //     console.log(`Producto ${indiceProducto + 1}:`, producto);
+    //   });
+    // });
+
   return (
     <section className='w-full flex items-center justify-center mt-5'>
-        <div className='w-11/12 flex flex-col gap-[1px]
-                        lg:min-w-[826px] lg:bg-white lg:rounded-md'>
+        <div className={`w-11/12 flex flex-col gap-[1px]
+                        lg:bg-white lg:rounded-md
+                        ${ fullScreen ? 'lg:w-[1180px]' : 'lg:w-[791px]'}`}>
             <div className='w-full h-12 rounded-t-md bg-white px-5 flex gap-2 items-center justify-between'>
                 <div className='flex'>
                     <h3 className='font-semibold lg:text-lg'>Ofertas</h3>
                     <button className='pt-[9px] pb-[8px] px-[12px]'>
-                        <p className='hidden lg:block lg:text-sm lg:text-actions-success first-letter:uppercase font-semibold'>mostrar todas las ofertas</p>
+                        <p className='hidden lg:block lg:text-sm lg:text-actions-success first-letter:uppercase font-semibold lg:font-normal'>mostrar todas las ofertas</p>
                     </button>
                 </div>
                 <div className='flex items-center gap-1'>
                     {
-                        products.map((data) => (
-                            <button
+                        prueba.map((_, index) => (
+                            <button key={index}
                              disabled
-                             className='w-[6px] h-[6px] bg-gray-400/50 rounded-full'>
-
+                             className='w-[6px] h-[6px] bg-gray-400/50 rounded-full active:bg-actions-success'>
                             </button>
                         ))
                     }
                 </div>
             </div>
-            <div className='w-full'>
-                <ul className='grid grid-cols-2 gap-[1px]
-                               lg:flex lg:flex-nowrap lg:rounded-b-md lg:relative'>
-                    <button className='absolute w-16 h-16 flex items-center justify-center rounded-full shadow-lg bg-white top-[calc(50%-40px)] -left-8 z-20 text-actions-success'>
-                        <FaAngleLeft className='rotate-180'/>
+            <div className='w-full relative'>
+                    <button onClick={scroll_prev} className='absolute w-16 h-16 hidden lg:flex items-center justify-center rounded-full shadow-lg hover:shadow-xl bg-white top-[calc(50%-40px)] -left-8 z-20 text-actions-success'>
+                        <FaAngleLeft size={30} className=''/>
                     </button>
-                    <button className='absolute w-16 h-16 flex items-center justify-center rounded-full shadow-lg bg-white top-[calc(50%-40px)] -right-8 z-20 text-actions-success'>
-                        <FaAngleLeft className='rotate-180'/>
+                    <button onClick={scroll_next} className='absolute w-16 h-16 hidden lg:flex items-center justify-center rounded-full shadow-lg hover:shadow-xl bg-white top-[calc(50%-40px)] -right-8 z-20 text-actions-success'>
+                        <FaAngleLeft size={30} className='rotate-180'/>
                     </button>
+                    {/* ----- Ul Container ----- */}
+                <ul ref={carrousel} className='grid grid-cols-2 gap-[1px] snap-mandatory
+                               lg:flex lg:flex-nowrap lg:rounded-b-md lg:overflow-hidden lg:bg-white lg:relative lg:scroll-smooth'>
                     {
-                        products.map((data) => (
-                            <li className='p-1 w-full h-full bg-white
-                                    lg:h-[361px]' >
-                    <div className='w-full h-full'>
-                        <div className='w-full relative flex flex-col mb-5'>
-                        <span className='absolute w-full h-full left-0 top-0 bg-gray-600/5 lg:hidden'></span>
-                            <img src='https://http2.mlstatic.com/D_Q_NP_2X_794797-MLA50436072460_062022-V.webp' alt={data.name} className='object-cover lg:object-contain aspect-square' />
-                        </div>
-                        {/* <Link className=''>
-                            Audífonos Sony Bluetooth Noise Cancelling | Wh-1000xm5 Color Negro
-                        </Link>
-                        <div className=''>
-                            <s className='0'>
-                                $ 3.000.000
-                            </s>
-                            <div className=''>
-                                <span className=''>$ 1.900.000</span>
-                                <span className=''>50% off</span>
-                            </div>
-                        </div> */}
-                    </div>
-                </li>
+                        prueba.map((data) => (
+                            data.map((dataItem) => (
+                              <ProductCard key={dataItem.id} {...dataItem} />
+                            ))
                         ))
                     }
                 </ul>
