@@ -8,10 +8,23 @@ export const ProductCard = ({ name, imagen, price, discount, id }) => {
         clickProduct.current.click()
     }
 
+    const applyDiscount = (num1, num2) => {
+        const a = parseInt(num1)
+        const b = parseInt(num2)
+        if ( a === 0 || b === 0 ) return
+        return (!isNaN(a) && !isNaN(b)) ? formatNumber((a * b) / 100) : null;
+    }
+
+    // Función para formatear números con puntos de mil
+    function formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+  
+
   return (
-    <li
-        onClick={onClick} className='group group-hover:text-actions-success p-1 w-full h-full bg-white
-                   lg:h-[361px] lg:min-w-[196.6px]' >
+    <li 
+        onClick={onClick} className={`group p-1 w-full h-full bg-white
+                   lg:h-[361px] lg:min-w-[196.6px]`} >
         <div className='w-full h-full'>
             <div className='w-full lg:h-1/2 relative flex items-center justify-center'>
                 <span className='absolute w-full h-full left-0 top-0 bg-gray-600/5 lg:hidden'></span>
@@ -21,15 +34,15 @@ export const ProductCard = ({ name, imagen, price, discount, id }) => {
                 <Link
                  to={`/category/${id}`}
                  ref={clickProduct}
-                 className='text-sm line-clamp-2 mb-2 group'>
+                 className='text-sm line-clamp-2 mb-2 px-2 group-hover:text-actions-success duration-200'>
                     {name}
                 </Link>
-                { discount && <s className='text-xs text-gray-400'>$ 3.690.000</s>}
-                <div className='flex flex-wrap gap-1'>
+                { discount > 0 ? <s className='text-xs px-2 text-gray-400'>$ {formatNumber(price)}</s> : '' }
+                <div className='flex flex-wrap gap-1 px-2'>
                     <span className='font-semibold lg:text-xl lg:font-normal'>
-                       $ {price}
+                       $ { discount > 0 ? applyDiscount(price, discount) : formatNumber(price) }
                     </span>
-                    <span className='text-actions-discount text-xs lg:text-xs uppercase'>45% off</span>
+                    { discount > 0 ? <span className='text-actions-discount text-xs lg:text-xs uppercase'>{discount}% off</span> : '' }
                 </div>
             </div>
         </div>
