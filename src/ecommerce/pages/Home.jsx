@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { Carrousel } from '../components/Carrousel'
 import { CarrouselProduct } from '../components/CarrouselProduct'
 import { CarrouselOferts } from '../components/CarrouselOferts'
+import { CarrouselCategory } from '../components/CarrouselCategory'
+import { categories } from '../components/categories'
 
 
 
@@ -21,8 +23,7 @@ export const Home = () => {
         </div>
       </div>
       <CarrouselProduct fullScreen itemPagina={6}/>
-      <CarrouselProduct fullScreen itemPagina={6}/>
-      
+      <CarrouselCategory data={categories} itemPagina={9}/>
     </>
   )
 }
