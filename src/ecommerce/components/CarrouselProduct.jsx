@@ -157,14 +157,14 @@ export const CarrouselProduct = ({ fullScreen, itemPagina }) => {
             <div className='w-full relative'>
                     <button 
                       onClick={scroll_prev} 
-                      className={`absolute w-16 h-16 hidden items-center justify-center rounded-full shadow-lg hover:shadow-xl bg-white top-[calc(50%-40px)] -left-8 z-20 text-actions-success
-                                  ${ paginaActual === 1 ? 'lg:hidden' : 'lg:flex'} ${ fullScreen ? '' : '-left-12'}`}>
+                      className={`absolute w-16 h-16 hidden items-center justify-center rounded-full shadow-lg hover:shadow-xl bg-white top-[calc(50%-40px)] -left-8 z-20 text-actions-success/80
+                                  hover:text-actions-success ${ paginaActual === 1 ? 'lg:hidden' : 'lg:flex'} ${ fullScreen ? '' : '-left-[5.5%]'}`}>
                         <FaAngleLeft size={30} className=''/>
                     </button>
                     <button 
                       onClick={scroll_next}
-                      className={`absolute w-16 h-16 hidden items-center justify-center rounded-full shadow-lg hover:shadow-xl bg-white top-[calc(50%-40px)] -right-8 z-20 text-actions-success
-                                  ${ paginaActual === pagination ? 'hidden' : 'lg:flex'} ${ fullScreen ? '' : '-right-12'}`}>
+                      className={`absolute w-16 h-16 hidden items-center justify-center rounded-full shadow-lg hover:shadow-xl bg-white top-[calc(50%-40px)] -right-8 z-20 text-actions-success/80
+                                  hover:text-actions-success ${ paginaActual === pagination ? 'hidden' : 'lg:flex'} ${ fullScreen ? '' : '-right-[5.5%]'}`}>
                         <FaAngleLeft size={30} className='rotate-180'/>
                     </button>
                     {/* ----- Ul Container ----- */}
