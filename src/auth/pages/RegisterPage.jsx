@@ -81,7 +81,7 @@ export const RegisterPage = () => {
         </div>
         <div className='flex flex-col gap-3'>
             <div className='flex flex-row gap-3 items-center justify-start'>
-              <input type='checkbox' name='' id='' className='hidden'/>
+              <input type='checkbox' name='oferts' className='hidden'/>
               <button 
                 onClick={()=>setPrueba(!prueba)}
                 type='button'
@@ -97,7 +97,7 @@ export const RegisterPage = () => {
               </p>
             </div>
             <div className='flex flex-row gap-3 items-center'>
-              <input type='checkbox' name='' id='' className='hidden justify-start'/>
+              <input type='checkbox' name='t&c' className='hidden justify-start'/>
               <button 
                 onClick={()=>setPrueba(!prueba)}
                 type='button'

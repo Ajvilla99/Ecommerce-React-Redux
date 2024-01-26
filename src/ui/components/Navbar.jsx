@@ -162,10 +162,10 @@ export const Navbar = () => {
                   </div>
                   <div className='w-[calc(100%-50px)] flex flex-col'>
                     <div className='flex items-center gap-2'>
-                      <span className='line-clamp-1'>Karolay arguello</span>
+                      <span className='line-clamp-1 text-left'>Iniciar sesion</span>
                       <IoIosArrowDown />
                     </div>
-                    <span className='text-left text-menu-secondary font-semibold text-xs'>prueba@prueba.com</span>
+                    <span className='text-left text-menu-secondary font-semibold text-xs'></span>
                   </div>
                 </button>
           </div>

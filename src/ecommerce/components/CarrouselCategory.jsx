@@ -73,11 +73,9 @@ export const CarrouselCategory = ({data, itemPagina = 4}) => {
                                                 lg:flex lg:p-5 lg:pt-0 lg:gap-5 lg:overflow-hidden lg:scroll-smooth'>
                     {
                         data.reduce((acc, category, index) => {
-                            // Agrupar la data en arrays de a 3 categorías
                             if (index % 3 === 0) {
                               acc.push([]);
                             }
-                        
                             acc[acc.length - 1].push(category);
                             return acc;
                           }, []).map((group, groupIndex) => (

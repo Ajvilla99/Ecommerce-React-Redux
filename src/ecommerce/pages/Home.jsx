@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Carrousel } from '../components/Carrousel'
 import { CarrouselProduct } from '../components/CarrouselProduct'
 import { CarrouselOferts } from '../components/CarrouselOferts'

@@ -11,6 +11,7 @@ export const LoginPage = () => {
   
   const onSubmit = (event) => {
     event.preventDefault()
+    console.log(first)
   }
 
   const [viewPass, setViewPass] = useState(false);
@@ -63,7 +64,7 @@ export const LoginPage = () => {
       <div className='w-11/12 flex flex-col items-center justify-center py-10 gap-3 max-w-[400px]'>
         <hr className='border-primary/50 w-full mb-5' />
         <h4 className="text-lg font-semibold">¿Aún no tienes una cuenta?</h4>
-        <Link to={'/register'} className='w-full h-10 font-semibold flex items-center justify-center rounded-md border-2 border-primary active:scale-95 duration-200'>
+        <Link to='/auth/register' className='w-full h-10 font-semibold flex items-center justify-center rounded-md border-2 border-primary active:scale-95 duration-200'>
           Crea una cuenta aqui
         </Link>
       </div>
