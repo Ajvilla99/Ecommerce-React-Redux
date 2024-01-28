@@ -16,7 +16,7 @@ export const Home = () => {
     <>
       <Carrousel />
       <div className='w-full flex justify-center'>
-          <div className='lg:max-w-[1180px] flex flex-col lg:flex-row lg:justify-between'>
+          <div className='lg:w-[1180px] flex flex-col lg:flex-row lg:justify-between'>
             <CarrouselOferts />
             <CarrouselProduct itemPagina={4}/>
         </div>

@@ -15,13 +15,11 @@ export const AppRouter = () => {
     <Routes>
         {
           ( status === 'authenticated' )
-           ? <Route path='/' element={ <EcommerceRoutes /> }/>
-           : <Route path='/auth/*' element={ <AuthRoutes /> } />
+           ? <Route path='/*' element={ <EcommerceRoutes /> }/>
+           : <Route path='/auth/*' element={ <AuthRoutes /> }/>
         }
 
-        <Route path="/*" element={ <Navigate to='/auth/login' /> } />
-        {/* <Route path='/login' element={ <LoginPage /> } /> */}
-        {/* <Route path='/register' element={ <RegisterPage /> } /> */}
+          <Route path="/*" element={ <Navigate to='/auth/login' /> }/>
     </Routes>
   )
 }

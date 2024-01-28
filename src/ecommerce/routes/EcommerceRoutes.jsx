@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { CategoriesPage, Home } from '../pages'
+import { CategoriesPage, Home, CartPage } from '../pages'
 import { Footer, Navbar } from '../../ui'
-import { PurchaseDashboard } from '../pages'
 
 export const EcommerceRoutes = () => {
   return (
@@ -10,9 +9,9 @@ export const EcommerceRoutes = () => {
       <Routes>
           <Route path='/' element={ <Home /> } />
           <Route path='/categories' element={ <CategoriesPage /> } />
-          <Route path='/purchase' element={ <PurchaseDashboard /> } />
-          {/* <Route path='' element={ <Home /> } /> */}
-          <Route path='/*' element={ <Navigate to='/' /> } />
+          <Route path='/cart' element={ <CartPage /> } />
+          
+          {/* <Route path='/*' element={ <Navigate to='/' /> } /> */}
       </Routes>
     <Footer/>
     </>

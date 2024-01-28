@@ -9,7 +9,7 @@ import { HiOutlineArrowLeft, HiOutlineShoppingBag } from "react-icons/hi2";
 import { FiUser, FiHeart } from "react-icons/fi";
 import { RiNotification2Line } from "react-icons/ri";
 import { LiaHeadsetSolid } from "react-icons/lia";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -20,6 +20,7 @@ export const Navbar = () => {
 
   const [ isFocused, setIsFocused ] = useState(false);
   const [ menuOpen, setMenuOpen ] = useState(false);
+  const [ viewMessage, setViewMessage ] = useState(false);
 
   return (
     <header className='w-full'>
@@ -56,12 +57,12 @@ export const Navbar = () => {
               }
             </form>
             <div className='flex gap-2'>
-              <button className='w-10 h-10 text-primary-light flex items-center justify-center rounded-md'>
+              <Link to={''} className='w-10 h-10 text-primary-light flex items-center justify-center rounded-md'>
                 <RiNotification2Line size={22}/>
-              </button>
-              <button className='w-10 h-10 text-primary-light flex items-center justify-center rounded-md'>
+              </Link>
+              <Link to={'/cart'} className='w-10 h-10 text-primary-light flex items-center justify-center rounded-md'>
                 <BsCart3 size={22}/>
-              </button>
+              </Link>
             </div>
         </div>
         <div className='w-full h-10 pr-2 flex items-center justify-center relative text-primary-light'>
@@ -170,28 +171,33 @@ export const Navbar = () => {
                 </button>
           </div>
           <div className='w-full max-w-[1200px] h-16 flex items-center justify-between'>
-            <Link 
-              to={'address'}
-              className='w-40 h-full flex items-center justify-center relative'>
-                <IoLocationOutline size={32} className='animate-bounce'/>
-                <div className='flex flex-col'>
-                  <span className='first-letter:uppercase text-xs'>ingresa tu</span>
-                  <span className='first-letter:uppercase text'>ubicaciòn</span>
-                </div>
-            {/* Message */}
-                <div className='absolute hidden p-5 w-80 h-40 bottom-[-250%] rounded left-[0%] bg-[#eee] z-10 flex items-center justify-center'>
+            <div className='h-full relative'>
+              <Link 
+                to={'address'}
+                className='w-40 h-full flex items-center justify-center relative'>
+                  <IoLocationOutline size={32} className='animate-bounce'/>
+                  <div className='flex flex-col'>
+                    <span className='first-letter:uppercase text-xs'>ingresa tu</span>
+                    <span className='first-letter:uppercase text-sm'>ubicaciòn</span>
+                  </div>                
+              </Link>
+              <div className={`absolute p-5 w-80 bottom-[-300%] rounded left-[0%] bg-[#eee] z-10 items-center justify-center shadow-md
+                                ${ !viewMessage ? 'hidden' : 'flex' }`}>
                   <div className='relative w-full h-full text-black z-10'>
                     <div className='absolute bg-[#eee] w-10 h-10 top-[-22.5%] left-[10%] text-black rotate-45 z-[-1]'>
                     </div>
                     <h4 className='font-semibold'>Conoce el envío a tu ubicación</h4>
-                    <span className='text-sm leading-3 text-gray-900'>Agrega tu ubicación para ver costos y tiempos de entrega precisos en tu búsqueda.</span>
+                    <span className='text-sm leading-3 text-justify text-gray-900'>Agrega tu ubicación para ver costos y tiempos de entrega precisos en tu búsqueda.</span>
                     <div className='w-full flex text-sm items-center font-semibold mt-3 gap-4'>
                         <button type='button' className='py-2 px-3 rounded bg-actions-success text-white bg-opacity-90 hover:bg-opacity-100 duration-300'>Agregar ubicaciòn</button>
-                        <button className='p-2 text-actions-success hover:bg-black hover:bg-opacity-10 duration-300'>Màs tarde</button>
+                        <button 
+                          type='button'
+                          onClick={() => setViewMessage(false)}
+                          className='p-2 text-actions-success rounded-md hover:bg-black hover:bg-opacity-10 duration-300'>Màs tarde</button>
                     </div>
                   </div>
                 </div>
-            </Link>
+            </div>
             <div className='w-[calc(1200px-500px)]'>
             {/* Navbar */}
               <nav className='w-full'>
@@ -241,11 +247,11 @@ export const Navbar = () => {
                 className='w-12 h-12 flex items-center justify-center rounded hover:bg-black hover:bg-opacity-15'>
                 <FiHeart size={22}/>
               </Link>
-              <Link to={''}
+              <Link to={'/notification'}
                 className='w-12 h-12 flex items-center justify-center rounded hover:bg-black hover:bg-opacity-15'>
                 <RiNotification2Line size={22}/>
               </Link>
-              <Link to={''}
+              <Link to={'/cart'}
                 className='w-12 h-12 flex items-center justify-center rounded hover:bg-black hover:bg-opacity-15'>
                 <BsCart3 size={22}/>
               </Link>
