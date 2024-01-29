@@ -6,7 +6,7 @@ export const products = [
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam veritatis, nemo fugiat ipsam culpa ab laboriosam. Architecto blanditiis aliquam saepe.",
       "image": "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp",
       "category": "Electronics",
-      "inventory": 50,
+      "inventory": 2,
       "discount": 10
     },
     {

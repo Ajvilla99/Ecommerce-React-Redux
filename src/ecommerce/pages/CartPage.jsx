@@ -1,63 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { ProductCart } from '../components/ProductCart';
 
 export const CartPage = () => {
 
   const { products } = useSelector(state => state.ecommerce);
 
-  const product = products[0]
-
   return (
-    <section className='w-full flex justify-center'>
-        <div className='w-full flex flex-col-reverse'>
-          <div className='w-full flex flex-col items-center bg-white rounded-md mb-10'>
-            <div className='hidden'>
+    <section className='w-full flex justify-center lg:pt-10'>
+        <div className='w-full flex flex-col-reverse
+                        lg:flex-row lg:max-w-[1180px] lg:justify-between lg:gap-5'>
+          <div className='w-full min-h-[400px] flex flex-col items-center bg-white rounded-md
+                          lg:w-2/3 lg:shadow-md lg:min-h-fit'>
+            <div className='hidden w-full h-12 lg:flex items-center px-5'>
               <p className='text-base'>Productos</p>
-            </div>
-            <div className='w-full h-[1px] bg-black/10'>
-            </div>
-              <ul className='w-full flex flex-col items-center py-3'>
-                <li className='w-full h-40 flex p-3'>
-                  <div className='w-full h-full relative p-3'>
-                    <div className='w-full h-full absolute left-0 top-0 bg-black/5 rounded-md'></div>
-                    <div className='w-full h-full flex flex-row'>
-                      <div className='w-2/5 h-full flex items-center'>
-                        <img src={product.image} alt={''} className='max-w-[95%] max-h-[95%] object-cover' />
-                      </div>
-                      <div className='w-3/5'>
-                          <div className='flex flex-col gap-2'>
-                              <h3 className='text-sm line-clamp-2'>{ product.name }</h3>
-                              <span className='font-semibold max-w-fit text-xs p-2 box-content rounded-md bg-actions-discount'>{`${product.discount}% OFF`}</span>
-                              <span className='font-semibold'>$ { product.price }</span>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li className='w-full h-40 flex p-3'>
-                  <div className='w-full h-full relative p-3'>
-                    <div className='w-full h-full absolute left-0 top-0 bg-black/5 rounded-md'></div>
-                    <div className='w-full h-full flex flex-row'>
-                      <div className='w-2/5 h-full flex items-center'>
-                        <img src={product.image} alt={''} className='max-w-[95%] max-h-[95%] object-cover' />
-                      </div>
-                      <div className='w-3/5'>
-                          <div className='flex flex-col gap-2'>
-                              <h3 className='text-sm line-clamp-2'>{ product.name }</h3>
-                              <span className='font-semibold max-w-fit text-xs p-2 box-content rounded-md bg-actions-discount'>{`${product.discount}% OFF`}</span>
-                              <span className='font-semibold'>$ { product.price }</span>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            <div>
+              </div>
+                <div className='border-separator w-11/12 h-[1px] bg-black/10 lg:w-full'>
+                </div>
+                  <ul className='w-full flex flex-col gap-3 items-center p-3'>
+                      
+                        <ProductCart {...products[0]}/>
+                        <ProductCart {...products[0]}/>
+                        <ProductCart {...products[0]}/>
+                        <ProductCart {...products[0]}/>
+
+                      
+                </ul>
+              <div>
             </div>
           </div>
-        <div className='w-full h-[1px] bg-black/10'></div>
-          <div className='w-full flex flex-col items-center bg-white'>
-            <div className='w-full h-14 flex items-center px-5'>
+        
+          <div className='w-full flex flex-col items-center bg-white
+                          lg:w-4/12 lg:max-h-[240px] lg:rounded-md lg:sticky lg:top-0 lg:shadow-md'>
+            <div className='w-full h-12 flex items-center px-5'>
               <p className='text-base'>Resumen de compra</p>
             </div>
             <div className='w-full h-[1px] bg-black/10'></div>

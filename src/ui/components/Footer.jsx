@@ -7,7 +7,7 @@ import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 export const Footer = () => {
   return (
-    <footer className="w-full py-[20px] mt-4 lg:mt-[40px] bg-menu-primary bottom-0 flex justify-center overflow-hidden">
+    <footer className="w-full py-[20px] lg:mt-[40px] bg-menu-primary bottom-0 flex justify-center overflow-hidden">
       <div className="footer-container w-[90%] lg:w-[80%]">
       <div className="lg:flex lg:justify-between lg:py-[50px]">
         {/* Logo */}
