@@ -18,27 +18,24 @@ export const CartPage = () => {
                 <div className='border-separator w-11/12 h-[1px] bg-black/10 lg:w-full'>
                 </div>
                   <ul className='w-full flex flex-col gap-3 items-center p-3'>
-                      
                         <ProductCart {...products[0]}/>
                         <ProductCart {...products[0]}/>
                         <ProductCart {...products[0]}/>
                         <ProductCart {...products[0]}/>
-
-                      
                 </ul>
               <div>
             </div>
           </div>
         
           <div className='w-full flex flex-col items-center bg-white
-                          lg:w-4/12 lg:max-h-[240px] lg:rounded-md lg:sticky lg:top-0 lg:shadow-md'>
+                          lg:w-4/12 lg:max-h-[220px] lg:rounded-md lg:sticky lg:top-0 lg:shadow-md'>
             <div className='w-full h-12 flex items-center px-5'>
               <p className='text-base'>Resumen de compra</p>
             </div>
             <div className='w-full h-[1px] bg-black/10'></div>
             <div className='w-full flex flex-col p-5 gap-[2px]'>
               <div className='flex justify-between text-sm'>
-                <span>Producto</span>
+                <span>Producto{`(${'1'})`}</span>
                 <span>$ 300.000</span>
               </div>
               <div className='flex justify-between text-sm'>

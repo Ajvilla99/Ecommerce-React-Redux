@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { FaAngleLeft } from 'react-icons/fa6';
 import { FiMoreVertical } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 
