@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { PiAppleLogoFill } from "react-icons/pi";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 
-// import './Footer.css'
 
 export const Footer = () => {
   return (

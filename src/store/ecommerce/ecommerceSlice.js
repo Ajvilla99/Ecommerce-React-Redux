@@ -14,14 +14,18 @@ export const ecommerceSlice = createSlice({
         },
         setProducts: (state, action ) => {
             state.products = action.payload;
-        }
+        },
+        setCategories: (state, action ) => {
+            state.categories = action.payload;
+        },
     },
 });
 
 
 export const { 
     addToCart,
-    setProducts
+    setProducts,
+    setCategories
 
 
 } = ecommerceSlice.actions;

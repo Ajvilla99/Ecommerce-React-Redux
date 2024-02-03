@@ -157,7 +157,7 @@ export const Navbar = () => {
                   </button>
                 </form>
                 {/* ------- */}
-                <button className='w-52 h-full flex gap-2 items-center justify-between'>
+                <Link to={'auth/login'} className='w-52 h-full flex gap-2 items-center justify-between'>
                   <div className='w-12 h-12 overflow-hidden rounded-full'>
                     <img src="https://i.imgur.com/773QfGA.jpg" alt="foto usuario" className='object-contain'/>
                   </div>
@@ -168,7 +168,7 @@ export const Navbar = () => {
                     </div>
                     <span className='text-left text-menu-secondary font-semibold text-xs'></span>
                   </div>
-                </button>
+                </Link>
           </div>
           <div className='w-full max-w-[1200px] h-16 flex items-center justify-between'>
             <div className='h-full relative'>

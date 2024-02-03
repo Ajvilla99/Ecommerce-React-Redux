@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authSlice } from "./auth";
-import { ecommerceSlice, setProducts } from "./ecommerce";
+import { ecommerceSlice, setCategories, setProducts } from "./ecommerce";
 import { products } from "./ecommerce/dataProduct";
+import { categories } from "./ecommerce/dataCategories";
 
 export const store = configureStore({
     reducer: {
@@ -11,3 +12,4 @@ export const store = configureStore({
 })
 
 store.dispatch(setProducts(products));
+store.dispatch(setCategories(categories));
