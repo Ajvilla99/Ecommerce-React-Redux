@@ -70,41 +70,5 @@ export const categories = [
     "name": "Garden and Outdoor",
     "description": "Products for the garden and outdoor activities.",
     "image": "garden.jpg"
-  },
-  {
-    "id": 13,
-    "name": "Furniture",
-    "description": "Furniture and home decor.",
-    "image": "furniture.jpg"
-  },
-  {
-    "id": 14,
-    "name": "Fitness",
-    "description": "Fitness equipment and accessories.",
-    "image": "fitness.jpg"
-  },
-  {
-    "id": 15,
-    "name": "Art and Crafts",
-    "description": "Art supplies and craft materials.",
-    "image": "art.jpg"
-  },
-  {
-    "id": 16,
-    "name": "Tech Gadgets",
-    "description": "Cutting-edge tech gadgets and accessories.",
-    "image": "tech.jpg"
-  },
-  {
-    "id": 17,
-    "name": "Travel Essentials",
-    "description": "Essential items for travel and adventure.",
-    "image": "travel.jpg"
-  },
-  {
-    "id": 18,
-    "name": "Outdoor Clothing",
-    "description": "Clothing and gear for outdoor activities.",
-    "image": "outdoor_clothing.jpg"
   }
 ]
