@@ -1,4 +1,4 @@
-export * from './Home';
-export * from './CategoriesPage';
 export * from './CartPage';
-export * from './';
+export * from './CategoriesPage';
+export * from './Home';
+export * from './SearchPage';
