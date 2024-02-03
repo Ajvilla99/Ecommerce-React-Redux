@@ -1,4 +1,4 @@
-import { CategoryCard } from "../components/CategoryCard"
+import { CategoryCard } from "../components/CategoriesPage/CategoryCard"
 
 export const CategoriesPage = () => {
   return (

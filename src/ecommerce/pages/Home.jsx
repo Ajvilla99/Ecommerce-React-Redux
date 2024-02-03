@@ -1,7 +1,7 @@
 import { Carrousel } from '../components/Carrousel'
 import { CarrouselProduct } from '../components/CarrouselProduct'
 import { CarrouselOferts } from '../components/CarrouselOferts'
-import { CarrouselCategory } from '../components/CarrouselCategory'
+import { CarrouselCategory } from '../components/CategoriesPage/CarrouselCategory'
 import { categories } from '../components/categories'
 
 

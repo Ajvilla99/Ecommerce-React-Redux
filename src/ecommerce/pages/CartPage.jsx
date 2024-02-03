@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { ProductCart } from '../components/ProductCart';
+import { ProductCart } from '../components/CartPage/ProductCart';
 
 export const CartPage = () => {
 
@@ -19,16 +19,16 @@ export const CartPage = () => {
                 </div>
                   <ul className='w-full flex flex-col gap-3 items-center p-3'>
                         <ProductCart {...products[0]}/>
-                        <ProductCart {...products[0]}/>
-                        <ProductCart {...products[0]}/>
-                        <ProductCart {...products[0]}/>
+                        <ProductCart {...products[1]}/>
+                        <ProductCart {...products[2]}/>
+                        <ProductCart {...products[3]}/>
                 </ul>
               <div>
             </div>
           </div>
         
           <div className='w-full flex flex-col items-center bg-white
-                          lg:w-4/12 lg:max-h-[220px] lg:rounded-md lg:sticky lg:top-0 lg:shadow-md'>
+                          lg:w-[340px] lg:max-h-[220px] lg:rounded-md lg:sticky lg:top-0 lg:shadow-md'>
             <div className='w-full h-12 flex items-center px-5'>
               <p className='text-base'>Resumen de compra</p>
             </div>
