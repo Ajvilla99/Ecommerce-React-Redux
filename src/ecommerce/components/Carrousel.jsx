@@ -63,14 +63,6 @@ export const Carrousel = () => {
                   ))
                 }
             </ul>
-            {/* <div className='w-20 h-5 absolute flex justify-center mt-4 bottom-0 gap-1'>
-                {
-                  [...Array(Math.ceil(dataImage.length / itemsPerPage))].map((_, index) => (
-                    <button onClick={() => paginate(index + 1)} className='bg-primary/50 w-[5px] h-[5px] rounded-full lg:w-2 lg:h-2 shadow-md'>
-                    </button>
-                  ))
-                }
-            </div> */}
         </div>
     </section>
   )
