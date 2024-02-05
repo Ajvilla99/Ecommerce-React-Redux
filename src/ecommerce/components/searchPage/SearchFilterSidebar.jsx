@@ -1,20 +1,27 @@
 import { useEffect, useState } from 'react';
 
 // ICONS
-import { GoArrowSwitch } from 'react-icons/go';
 import { IoIosArrowUp } from 'react-icons/io';
 import { useSelector } from 'react-redux';
 
 // COMPONENTS
-import { SearchFilterSidebarMobile } from './SearchFilterSidebarMobile';
+import { SearchFilterSidebarMobile } from './FilterSidebarMobile';
 
 
 
 export const SearchFilterSidebar = () => {
 
-
   const { categories } = useSelector(state => state.ecommerce );
-  const [ prueba, setPrueba ] = useState(false);
+
+  const [ viewFilter, setViewFilter ] = useState(false);
+
+  useEffect(() => {
+    if (viewFilter) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [viewFilter]);
 
   return (
     <aside className='w-full'>
@@ -23,13 +30,17 @@ export const SearchFilterSidebar = () => {
         <span className='text-sm text-black/50'>
           +2000 Resultados
         </span>
-        <button onClick={() => setPrueba(!prueba)} className='text-sm flex items-center gap-2 text-actions-success'>
+        <button onClick={() => setViewFilter(!viewFilter)} className='text-sm flex items-center gap-2 text-actions-success'>
           Filtrar {`(1)`} <IoIosArrowUp className='rotate-180'/>
         </button>
-        { prueba && <div className='fixed w-full h-screen left-0 z-10 top-24 bg-black/10'></div>}
+        { viewFilter && 
+            <div
+              onClick={() => setViewFilter(false)}
+              className='absolute w-full h-screen left-0 z-10 top-12 bg-black/20'></div>}
         { 
-          prueba && 
-            <SearchFilterSidebarMobile categories={categories} />
+          viewFilter && 
+            <SearchFilterSidebarMobile 
+              categories={categories} />
         }
       </div>
     </aside>

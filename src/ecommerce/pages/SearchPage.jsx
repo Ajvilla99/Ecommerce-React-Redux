@@ -9,9 +9,12 @@ export const SearchPage = () => {
 
   return (
     <>
-        <section className='w-full flex flex-col'>
+        <section className='w-full flex items-center justify-center'>
+          <div className='w-full flex flex-col
+                          lg:flex-row lg:w-[1180px] lg:pt-5'>
             <SearchFilterSidebar />
             <ProductListWithSorting products={products} />
+          </div>
         </section>
     </>
   )

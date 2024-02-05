@@ -1,12 +1,22 @@
-import React from 'react'
-import { ProductCardSearch } from './ProductCardSearch'
+
+// Components
+import { ProductCardSearch } from './'
 
 export const ProductListWithSorting = ({ products }) => {
   return (
-    <ul className=''>
-      {products.map(product => (
-        <ProductCardSearch  key={product.id} {...product}/>
-      ))}
-    </ul>
+    <div className='w-full flex lg:flex-col gap-3'>
+      <div className='hidden h-12 lg:flex items-center bg-white'>
+
+      </div>
+      <ul className='w-full flex flex-col py-3 bg-white'>
+
+
+        {
+          products.map(product => (
+            <ProductCardSearch  key={product.id} {...product}/>
+          ))
+        }
+      </ul>
+    </div>
   )
 }
