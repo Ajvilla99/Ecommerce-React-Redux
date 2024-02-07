@@ -6,8 +6,8 @@ import { IoSearchOutline } from "react-icons/io5";
 import { useSelector } from 'react-redux';
 
 // COMPONENTS
-import { SearchFilterSidebarMobile } from './FilterSidebarMobile';
-import { FilterSideBarDesktop } from './FilterSideBarDesktop';
+import { SearchFilterSidebarMobile } from './FilterMobile';
+import { FilterSideBarDesktop } from './FilterDesktop';
 
 
 
@@ -26,7 +26,7 @@ export const SearchFilterSidebar = () => {
   }, [viewFilterMobile]);
 
   return (
-    <aside className='w-full lg:w-[260px]'>
+    <aside className='w-full lg:w-[280px]'>
       <div className='w-full h-12 flex items-center justify-between relative px-4 shadow-md 
                       lg:hidden'>
         <span className='text-sm text-black/50'>
@@ -51,9 +51,10 @@ export const SearchFilterSidebar = () => {
       <div className='w-full flex flex-col gap-3'>
         <div className='w-full h-12 flex items-center px-4'>
           <IoSearchOutline className='text-xl text-gray-700 mr-2'/>
-          <span className='text-xl text-gray-700'>Carta</span>
+          <span className='text-xl text-gray-700'>carta</span>
         </div>
-        <FilterSideBarDesktop/>
+          <FilterSideBarDesktop
+            categories={categories} />
       </div>
     </aside>
   )
