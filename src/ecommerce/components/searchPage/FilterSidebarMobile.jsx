@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
-import { IoIosArrowUp } from "react-icons/io";
+import { useRef, useState } from 'react';
+import { IoIosArrowUp } from 'react-icons/io';
 
 
 export const SearchFilterSidebarMobile = ({categories}) => {
 
-  const [ displayFilter, setDisplayFilter ] = useState({ category: false, ordener: false, });
+  const [ displayFilter, setDisplayFilter ] = useState({ category: false, ordener: false, price: false});
 
 
   return (
@@ -75,7 +75,59 @@ export const SearchFilterSidebarMobile = ({categories}) => {
                     }
                   </ul>
                 </div>
-                <hr className='w-full h-[1px] bg-black/10' />
+                <hr className='w-full h-[1px] bg-black/10'/>
+                <div className='w-full text-xs'>
+                  <button 
+                    onClick={() => setDisplayFilter( prevState => ({ ...prevState, price: !prevState.price }))}
+                  className={`w-full h-12 px-4 flex items-center justify-between
+                              ${ displayFilter.price ? 'border-b-[2px]' : '' }`}>
+                    <div className='flex flex-col items-start'>
+                      <h3 className='font-semibold'>Precio</h3>
+                      {/* <span className='text-actions-success'>90.000 - 150.000</span> */}
+                    </div>
+                    <span className='text-actions-success'>
+                      <IoIosArrowUp className='rotate-180'/>
+                    </span>
+                  </button>
+                  <div className={`w-full scroll-smooth duration-500 overflow-y-visible overflow-hidden flex flex-col gap-[1px] bg-black/5
+                                  ${ displayFilter.price ? 'h-[135px]' : 'h-0' }`}>
+                    <form className='w-full flex flex-col p-4 gap-3'>
+                      <div className='w-full flex flex-row justify-between'>
+                        <div className='w-5/12 relative flex flex-col gap-2'>
+                          <span className='absolute text-sm text-gray-400 bottom-[5.5%]'>$</span>
+                            <label className='text-gray-400'>Mínimo</label>
+                          <input 
+                            type=''
+                            placeholder=''
+                            name=''
+                            // value=''
+                            // onChange={''}
+                            className='w-full h-6 text-gray-500 outline-none bg-transparent border-b-[2px] border-actions-success indent-3'
+                          />
+                        </div>
+                        <div className='w-5/12 relative flex flex-col gap-2'>
+                          <span className='absolute text-sm text-gray-400 bottom-[5.5%]'>$</span>
+                            <label className='text-gray-400'>Máximo</label>
+                          <input 
+                            type=''
+                            placeholder=''
+                            name=''
+                            // value=''
+                            // onChange={''}
+                            className='w-full h-6 text-gray-500 outline-none bg-transparent border-b-[2px] border-actions-success indent-3'
+                          />
+                        </div>
+                        
+                      </div>
+                      <button 
+                        type='submit'
+                        className='w-full flex items-center justify-center h-10 bg-actions-success text-white font-semibold rounded-md'>
+                        Aplicar
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <hr className='w-full h-[1px] bg-black/10'/>
               </div>
   )
 }

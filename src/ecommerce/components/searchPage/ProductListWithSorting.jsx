@@ -4,7 +4,8 @@ import { ProductCardSearch } from './'
 
 export const ProductListWithSorting = ({ products }) => {
   return (
-    <div className='w-full flex lg:flex-col gap-3'>
+    <div className='w-full flex lg:flex-col gap-3
+                    lg:w-[calc(1180px-370px)]'>
       <div className='hidden h-12 lg:flex items-center bg-white'>
 
       </div>
