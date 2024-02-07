@@ -11,7 +11,7 @@ import { RiNotification2Line } from "react-icons/ri";
 import { LiaHeadsetSolid } from "react-icons/lia";
 import { IoIosArrowDown } from "react-icons/io";
 
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { ItemSearch } from './ItemSearch';
 
@@ -21,6 +21,14 @@ export const Navbar = () => {
   const [ isFocused, setIsFocused ] = useState(false);
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ viewMessage, setViewMessage ] = useState(false);
+
+  const navigate = useNavigate()
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    // navigate(`?q=${ searchText.toLowerCase() }`);
+    navigate('search')
+  }
 
   return (
     <header className='w-full'>
@@ -68,7 +76,7 @@ export const Navbar = () => {
         <div className='w-full h-10 pr-2 flex items-center justify-center relative text-primary-light'>
           <Link className='w-11/12 h-10  flex items-center pl-2 gap-1'>
               <IoLocationOutline size={16}/>
-              <p className='text-sm'>117 #10k-28</p>
+              <p className='text-sm'>Agregar dirección</p>
           </Link>
         </div>
       </div>
@@ -148,16 +156,20 @@ export const Navbar = () => {
                 <Link to={'/'} className='w-40 h-full flex items-center justify-center'>
                   <img src={Logo} alt="" className=' h-full' />
                 </Link>
-                <form className='w-[calc(1200px-500px)] flex flex-row-reverse items-center justify-center relative'>
+                <form 
+                  onSubmit={onSubmit}
+                  className='w-[calc(1200px-500px)] flex flex-row-reverse items-center justify-center relative'>
                   <input 
                     type="search" 
                     className='w-full rounded-r h-12 outline-none pr-3 indent-5 text-base text-menu-primary bg-[#eee]' />
-                  <button type='submit' className='w-16 flex items-center justify-center rounded-l bg-gray-500 h-12'>
+                  <button
+                   type='submit' 
+                   className='w-16 flex items-center justify-center rounded-l bg-gray-500 h-12'>
                     <IoSearchSharp size={24} color='white'/>
                   </button>
                 </form>
                 {/* ------- */}
-                <Link to={'auth/login'} className='w-52 h-full flex gap-2 items-center justify-between'>
+                <Link to={'/auth/login'} className='w-52 h-full flex gap-2 items-center justify-between'>
                   <div className='w-12 h-12 overflow-hidden rounded-full'>
                     <img src="https://i.imgur.com/773QfGA.jpg" alt="foto usuario" className='object-contain'/>
                   </div>
