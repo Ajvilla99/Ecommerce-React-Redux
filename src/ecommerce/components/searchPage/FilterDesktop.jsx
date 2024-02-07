@@ -69,7 +69,7 @@ export const FilterSideBarDesktop = ({ categories }) => {
               className={`w-full min-h-10 flex justify-between items-center px-2 hover:text-actions-success
                           ${ view.categories ? 'border-b-2 border-actions-success text-actions-success sticky top-0 bg-inherit' : ''}`}>
               <p className='text-sm first-letter:uppercase'>
-                Categories
+                Categoria
               </p>
               <span className={`text-xl duration-500  ${view.categories ? '' : 'rotate-180'}`}>
                 <IoIosArrowUp/>
@@ -89,10 +89,15 @@ export const FilterSideBarDesktop = ({ categories }) => {
           </div>
           <span className='separator w-full h-[2px] bg-black/10'></span>
 
-          <div className='w-full h-60'>
+          <div className='w-full h-fit'>
+            <div className='w-full h-10'>
+              <span className='w-full h-full px-2 flex items-center text-sm'>
+                Filtrar por precio
+              </span>
+            </div>
               <form 
               // onSubmit={}
-               className='w-full py-2 flex flex-col gap-3'>
+               className='w-full py-2 flex flex-col gap-5'>
                 <div className='flex items-center justify-between'>
                   <input type='text'
                     placeholder='Mínimo'
