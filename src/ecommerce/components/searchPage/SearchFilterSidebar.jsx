@@ -26,7 +26,7 @@ export const SearchFilterSidebar = () => {
   }, [viewFilterMobile]);
 
   return (
-    <aside className='w-full lg:w-[280px]'>
+    <aside className='w-full lg:w-[300px]'>
       <div className='w-full h-12 flex items-center justify-between relative px-4 shadow-md 
                       lg:hidden'>
         <span className='text-sm text-black/50'>
