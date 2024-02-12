@@ -4,33 +4,35 @@ import { MdLocationOn } from "react-icons/md";
 
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { ItemSearch } from './ItemSearch';
-import { useDisplaySize } from '../../hooks';
+import { useDisplaySize, useForm } from '../../hooks';
 import { MenuDesktop, MenuMobile } from './';
 
 
 export const Navbar = () => {
 
-  const { width } = useDisplaySize()
+  const navigate = useNavigate();
+
+  const { width } = useDisplaySize();
+  const { searchText, formState, onInputChange } = useForm()
 
   const stringPathNavbar = [
     { path: '/product', name: 'product', icon: '' },
-    { path: '/promociones', name: 'Promociones', icon: '' },
+    { path: '/promociones', name: 'promociones', icon: '' },
     { path: '/cart', name: '', icon: ''},
-    { path: '/perfil', name: 'Perfil', icon: '' }
+    { path: '/account', name: 'perfil', icon: '' }
   ];
 
-  const onSubmit = (e) => {
+  const onSearchSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    navigate(`search/?q=${ searchText.toLowerCase() }`)
   }
 
   return (
     <header className='w-full'>
       {
         width <= 1024
-          ? <MenuMobile  string={stringPathNavbar} onSubmit={onSubmit}/>
-          : <MenuDesktop string={stringPathNavbar} onSubmit={onSubmit}/>
+          ? <MenuMobile  string={stringPathNavbar} onSubmit={onSearchSubmit} value={searchText} onChange={onInputChange}/>
+          : <MenuDesktop string={stringPathNavbar} onSubmit={onSearchSubmit} value={searchText} onChange={onInputChange}/>
       }
     </header>
   )

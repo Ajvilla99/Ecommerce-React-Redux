@@ -1,12 +1,16 @@
-import { IoMenu, IoSearchSharp, IoCartOutline } from 'react-icons/io5';
-import { MdLocationOn } from 'react-icons/md';
-import { IoIosNotifications, IoIosArrowRoundBack } from "react-icons/io";
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// Components
+import { ItemSearch } from './ItemSearch';
 
+// Icons
+import { MdLocationOn } from 'react-icons/md';
+import { IoMenu, IoSearchSharp, IoCartOutline, IoClose } from 'react-icons/io5';
+import { IoIosNotifications, IoIosArrowRoundBack } from "react-icons/io";
 
-export const MenuMobile = ({onSubmit}) => {
+export const MenuMobile = ({onSubmit, onChange, value}) => {
 
   const [ focusForm, setFocusForm ] = useState(false);
   const [ viewMenu , setViewMenu] = useState(false);
@@ -15,7 +19,9 @@ export const MenuMobile = ({onSubmit}) => {
     <div className='w-full bg-menu-primary'>
       <div className='w-full h-14 px-4 flex items-center justify-between text-primary-light'>
         <div className='w-10 h-10'>
-            <button className='w-full h-full flex items-center justify-center'>
+            <button 
+              onClick={()=>setViewMenu(true)}
+              className='w-full h-full flex items-center justify-center'>
               <IoMenu size={36}/>
             </button>
         </div>
@@ -24,9 +30,11 @@ export const MenuMobile = ({onSubmit}) => {
             onSubmit={onSubmit}
             className='w-full h-full flex items-center relative'>
             <input
-              onFocus={()=>setFocusForm(!focusForm)}
+              onFocus={()=>setFocusForm(true)}
               type='search' 
-              name=''
+              name='searchText'
+              value={value}
+              onChange={onChange}
               placeholder='Buscar producto'
               className={`w-full h-full outline-none pr-4 text-menu-primary text-sm
                           ${ focusForm ? 'border-b-2 border-black/10 indent-10 py-2' : 'rounded indent-8' }`}/>
@@ -45,18 +53,22 @@ export const MenuMobile = ({onSubmit}) => {
           </form>
           {
             focusForm && 
-            <div className='bg-white px-4 absolute top-14 left-0 w-full h-screen z-30'>
-              <ul className=''>
-
+            <div className='bg-white absolute top-14 left-0 w-full h-screen z-30'>
+              <ul className='flex flex-col'>
+                  {
+                    [...Array(5)].map(i => (
+                      <ItemSearch key={i+0.1}/>
+                    ))
+                  }
               </ul>
             </div>
           }
             
         </div>
         <div className='w-10 h-10'>
-          <button className='w-full h-full flex items-center justify-center'>
+          <Link to={'cart'} className='w-full h-full flex items-center justify-center'>
             <IoCartOutline size={30}/>
-          </button>
+          </Link>
         </div>
       </div>
       <div className='w-full'>
@@ -69,6 +81,18 @@ export const MenuMobile = ({onSubmit}) => {
           </p>
         </Link>
       </div>
+        <div className={`h-screen absolute top-0 left-0 bg-black/30 duration-1000 z-50
+                        ${viewMenu ? 'w-full ' : 'w-0'} `}>
+          <button 
+            onClick={()=>setViewMenu(!viewMenu)}
+            className='w-10 h-10 bg-menu-primary rounded-md text-3xl absolute flex items-center justify-center top-4 right-4 text-white/80'>
+                  <IoClose />
+          </button>
+
+          <aside className='w-4/5 h-full bg-white'>
+
+          </aside>
+        </div>
     </div>
   )
 }

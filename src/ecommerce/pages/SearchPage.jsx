@@ -4,7 +4,7 @@ import { ProductListWithSorting, SearchFilterSidebar } from '../components/searc
 
 export const SearchPage = () => {
 
-  const {products} = useSelector(state => state.ecommerce);
+  const { products } = useSelector(state => state.ecommerce);
   
 
   return (

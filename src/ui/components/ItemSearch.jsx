@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const ItemSearch = () => {
   return (
-    <Link className='w-full h-12 bg-gray-200 flex justify-between items-center px-4 z-30'>
+    <Link className='w-full h-12 bg-gray-100 active:bg-black/10 flex justify-between items-center px-4 z-30'>
         <div className='w-10 flex items-center justify-center'>
             <MdOutlineWatchLater size={20} color='gray'/>
         </div>
