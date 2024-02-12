@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export const useDisplaySize = () => {
-  const [displaySize, setDisplaySize] = useState({
+  const [ displaySize, setDisplaySize ] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
@@ -21,5 +21,7 @@ export const useDisplaySize = () => {
     };
   }, []);
 
-  return displaySize;
+  return {
+    ...displaySize,
+  };
 }

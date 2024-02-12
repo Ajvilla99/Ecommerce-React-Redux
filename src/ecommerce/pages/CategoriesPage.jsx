@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux"
 import { CategoryCard } from "../components/CategoriesPage/CategoryCard"
 
 export const CategoriesPage = () => {
+
+  const { categories } = useSelector(state => state.ecommerce)
+
   return (
     <>
       <section className='w-full flex justify-center items-center'>
@@ -8,8 +12,8 @@ export const CategoriesPage = () => {
 
           <ul className='w-full grid grid-cols-3 gap-3 py-3'>
            {
-            [...Array(9)].map((_, i) => (
-              <CategoryCard name={'categoria'}/>
+            categories.map((category) => (
+              <CategoryCard key={category.id} {...category}/>
             ))
            }
           </ul>

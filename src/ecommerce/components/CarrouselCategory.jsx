@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FaAngleLeft } from 'react-icons/fa6';
-import { CategoryCard } from './CategoryCard';
+import { CategoryCard } from './CategoriesPage/CategoryCard';
 
 export const CarrouselCategory = ({data, itemPagina = 4}) => {
 

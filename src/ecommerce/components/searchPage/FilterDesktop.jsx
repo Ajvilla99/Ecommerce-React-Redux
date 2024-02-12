@@ -97,15 +97,15 @@ export const FilterSideBarDesktop = ({ categories }) => {
             </div>
               <form 
               // onSubmit={}
-               className='w-full py-2 flex flex-col gap-5'>
+               className='w-full p-2 flex flex-col gap-5'>
                 <div className='flex items-center justify-between'>
                   <input type='text'
                     placeholder='Mínimo'
-                    className='w-5/12 h-8 text-sm text-center rounded-md '/>
+                    className='w-5/12 h-8 text-sm text-center rounded-md outline-actions-success'/>
                   <span className='w-2 h-0.5 bg-black/50'></span>
                   <input type='text'
                     placeholder='Máximo'
-                    className='w-5/12 h-8 text-sm text-center rounded-md '/>
+                    className='w-5/12 h-8 text-sm text-center rounded-md outline-actions-success'/>
                 </div>
                 <button className='text-sm text-white w-full bg-actions-success rounded-md py-2 hover:bg-opacity-80 duration-300 active:scale-95'>
                   Aplicar

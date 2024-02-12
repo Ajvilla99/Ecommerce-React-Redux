@@ -1,14 +1,18 @@
 import { Carrousel } from '../components/Carrousel'
 import { CarrouselProduct } from '../components/CarrouselProduct'
 import { CarrouselOferts } from '../components/CarrouselOferts'
-import { CarrouselCategory } from '../components/CategoriesPage/CarrouselCategory'
+import { CarrouselCategory } from '../components'
 import { categories } from '../components/categories'
+import { useDisplaySize } from '../../hooks/useDisplaySize'
 
 
 
 
 export const Home = () => {
 
+
+  const { width , height } = useDisplaySize()
+  
   // TODO: 
   // Solo para entregar datos
 

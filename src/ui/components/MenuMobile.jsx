@@ -1,6 +1,9 @@
+import React from 'react'
 
 export const MenuMobile = () => {
   return (
-    <div>MenuMobile</div>
+    <div className='w-full h-20'>
+
+    </div>
   )
 }

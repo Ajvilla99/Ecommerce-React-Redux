@@ -3,27 +3,29 @@ import { RxStarFilled } from 'react-icons/rx'
 import { Link } from 'react-router-dom'
 import { applyDiscount, formatNumber } from '../../helpers';
 
-export const ProductCardSearch = ({ name, price, image, discount }) => {
+export const ProductCardSearch = ({ name, price, image, discount, id }) => {
 
-    const productClick =  useRef(null);
-
-    const clickHandle = () => {
-        productClick.current.click()
-    }
+    const productClick =  useRef( null );
+    const clickHandle = () => { productClick.current.click() };
 
   return (
     <li 
         onClick={clickHandle}
         className='w-full h-44 rounded-md bg-white group
-                    lg:rounded lg:cursor-pointer'>
+                    lg:h-48 lg:rounded lg:cursor-pointer'>
         <div className='w-full h-full flex items-center justify-center'>
-            <div className='w-1/2 h-full p-2 relative flex items-center justify-center'>
-                <img src={image} alt={`foto del producto: name`} className='w-[90%] h-[90%] object-contain' />
+            <div className='w-1/2 h-full p-2 relative flex items-center justify-center
+                            lg:w-[200px]'>
+                <img 
+                    src={image}
+                    alt={`foto del producto: ${name}`} 
+                    className='w-[90%] h-[90%] object-contain'/>
             </div>
             <div 
-              className='w-1/2 h-full py-2.5 px-1  lg:w-[calc(100%-192px)] lg:py-5'>
+              className='w-1/2 h-full py-2.5 px-1  
+                lg:w-[calc(100%-192px)] lg:py-5'>
                 <Link
-                  to={'id'}
+                  to={`/product/${id}`}
                   ref={productClick}
                   className='text-sm line-clamp-2 group-hover:text-actions-success duration-300 lg:text-base'
                 >
