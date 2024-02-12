@@ -1,16 +1,14 @@
-import { Carrousel } from '../components/Carrousel'
-import { CarrouselProduct } from '../components/CarrouselProduct'
-import { CarrouselOferts } from '../components/CarrouselOferts'
-import { CarrouselCategory } from '../components'
-import { categories } from '../components/categories'
+
+import { Carrousel, CarrouselProduct, CarrouselOferts, CarrouselCategory } from '../components'
 import { useDisplaySize } from '../../hooks/useDisplaySize'
+import { useSelector } from 'react-redux'
 
 
 
 
 export const Home = () => {
 
-
+  const { categories } = useSelector(state => state.ecommerce);
   const { width , height } = useDisplaySize()
   
   // TODO: 
