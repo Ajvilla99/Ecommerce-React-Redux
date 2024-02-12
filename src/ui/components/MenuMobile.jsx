@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 export const MenuMobile = ({onSubmit}) => {
 
   const [ focusForm, setFocusForm ] = useState(false);
+  const [ viewMenu , setViewMenu] = useState(false);
 
   return (
     <div className='w-full bg-menu-primary'>
