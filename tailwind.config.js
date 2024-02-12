@@ -18,18 +18,13 @@ module.exports = {
           error_100: '#963838',
           success: '#3482f9',
           discount: '#f8853E',
-          // success_100: '#398044',
-          // informative: '#839ef9',
-          // informative__100: '#3462fe',
         },
         menu: {
-          primary: '#365071',
-          secondary: '#f0f3fa',
+          primary: '#0F1C2E',
+          "primary-light": '#628ecb',
+          secondary: '#3a3c49',
           third: '#6296b7',
           hover: '',
-          gray: {
-            '0': '#eeee',
-          }
         },
         'textColor': {
           primary: '#eee',
