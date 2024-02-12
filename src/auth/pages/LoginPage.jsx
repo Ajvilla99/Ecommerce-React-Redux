@@ -11,7 +11,7 @@ export const LoginPage = () => {
   
   const onSubmit = (event) => {
     event.preventDefault()
-    console.log(first)
+    console.log(event.target)
   }
 
   const [viewPass, setViewPass] = useState(false);
