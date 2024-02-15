@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -8,12 +7,28 @@ import { ItemSearch } from './ItemSearch';
 // Icons
 import { MdLocationOn } from 'react-icons/md';
 import { IoMenu, IoSearchSharp, IoCartOutline, IoClose } from 'react-icons/io5';
-import { IoIosNotifications, IoIosArrowRoundBack } from "react-icons/io";
+import { IoIosNotificationsOutline, IoIosArrowRoundBack, IoMdHeartEmpty, IoIosList } from "react-icons/io";
+import { LuUser2 } from "react-icons/lu";
+import { AiOutlineHome } from "react-icons/ai";
+import { SlHandbag } from "react-icons/sl";
 
-export const MenuMobile = ({onSubmit, onChange, value}) => {
+
+export const MenuMobile = ({ onSubmit, onChange, value }) => {
 
   const [ focusForm, setFocusForm ] = useState(false);
   const [ viewMenu , setViewMenu] = useState(false);
+  
+  const actionNavbar = () => {
+    setViewMenu(false)
+  }
+
+  const stringPath = [
+    { name: 'inicio', id: 'M01', path: '/', icon: <AiOutlineHome/>, action: actionNavbar},
+    { name: 'notificaciones', id: 'M02', path: '/notification', icon: <IoIosNotificationsOutline/>, action: actionNavbar},
+    { name: 'mis compras', id: 'M03', path: '/my_purchase', icon: <SlHandbag/>, action: actionNavbar},
+    { name: 'favoritos', id: 'M04', path: '/bookmarks', icon: <IoMdHeartEmpty/>, action: actionNavbar},
+    { name: 'categorias', id: 'M05', path: '/categories', icon: <IoIosList />, action: actionNavbar},
+  ]
 
   return (
     <div className='w-full bg-menu-primary'>
@@ -72,7 +87,7 @@ export const MenuMobile = ({onSubmit, onChange, value}) => {
         </div>
       </div>
       <div className='w-full'>
-        <Link className='h-10 px-4 flex items-center text-menu-primary-light text-xs'>
+        <Link to={'address'} className='h-10 px-4 flex items-center text-menu-primary-light text-xs'>
           <span className='w-8 h-8 flex items-center justify-center'>
             <MdLocationOn/>
           </span>
@@ -81,16 +96,61 @@ export const MenuMobile = ({onSubmit, onChange, value}) => {
           </p>
         </Link>
       </div>
-        <div className={`h-screen absolute top-0 left-0 bg-black/30 duration-1000 z-50
-                        ${viewMenu ? 'w-full ' : 'w-0'} `}>
+        <div
+          // onClick={()=>setViewMenu(!viewMenu)}
+          className={`h-screen absolute top-0 left-0 bg-white/30 duration-500 z-40
+                        ${viewMenu ? 'w-full' : 'w-full -translate-x-full pointer-events-none'} `}>
           <button 
             onClick={()=>setViewMenu(!viewMenu)}
             className='w-10 h-10 bg-menu-primary rounded-md text-3xl absolute flex items-center justify-center top-4 right-4 text-white/80'>
                   <IoClose />
           </button>
 
-          <aside className='w-4/5 h-full bg-white'>
+          <aside 
+            // onClick={(e) => e.stopPropagation()}
+            className='w-9/12 h-full bg-menu-primary overflow-hidden'>
+              <Link className='w-full h-24 p-4 bg-white flex items-center gap-2 shadow-md'>
+                  <div className='w-14 h-14 bg-menu-primary rounded-full flex items-center justify-center'>
+                    <span className='text-white text-3xl'>
+                      <LuUser2/>
+                    </span>
+                  </div>
+                  <div className='w-[calc(100%-60px)] flex flex-col overflow-hidden'>
+                      <div className='min-w-full text-lg'>
+                        Abraham Josue
+                      </div>
+                      <span className='min-w-full text-xs flex items-center'>
+                        Mi perfil {`>`}
+                      </span>
+                  </div>
+              </Link>
+              <ul className='w-full flex flex-col py-3'>
+                {
+                  stringPath.map(({ name, id, path, icon, action }) => (
+                    <li 
+                      key={id}
+                      className='w-full h-12'>
+                      <Link
+                        onClick={action}
+                        to={path}
+                        className='w-full h-full pr-4 pl-6 flex justify-between text-menu-primary-light active:bg-menu-primary-light/15'>
+                        <div className='h-full flex items-center gap-5'>
+                          <span className='text-2xl'> 
+                            {icon}
+                          </span>
+                          <p className='first-letter:uppercase text-sm'>
+                            {name}
+                          </p>
+                        </div>
+                        <div className=''>
 
+                        </div>
+                      </Link>  
+                    </li>
+                  ))
+                }
+                  
+              </ul>
           </aside>
         </div>
     </div>

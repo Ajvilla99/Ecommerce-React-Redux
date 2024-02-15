@@ -1,5 +1,5 @@
-import Logo from '../../assets/img/Logo.png'
 
+import logo from '../../assets/img/logo1.png'
 import { MdLocationOn } from "react-icons/md";
 
 import { Link, Navigate, useNavigate } from 'react-router-dom';
@@ -8,19 +8,15 @@ import { useDisplaySize, useForm } from '../../hooks';
 import { MenuDesktop, MenuMobile } from './';
 
 
+
 export const Navbar = () => {
 
   const navigate = useNavigate();
 
   const { width } = useDisplaySize();
-  const { searchText, formState, onInputChange } = useForm()
+  const { searchText, formState, onInputChange, onResetForm } = useForm({ searchText: '' })
 
-  const stringPathNavbar = [
-    { path: '/product', name: 'product', icon: '' },
-    { path: '/promociones', name: 'promociones', icon: '' },
-    { path: '/cart', name: '', icon: ''},
-    { path: '/account', name: 'perfil', icon: '' }
-  ];
+
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
@@ -31,8 +27,8 @@ export const Navbar = () => {
     <header className='w-full'>
       {
         width <= 1024
-          ? <MenuMobile  string={stringPathNavbar} onSubmit={onSearchSubmit} value={searchText} onChange={onInputChange}/>
-          : <MenuDesktop string={stringPathNavbar} onSubmit={onSearchSubmit} value={searchText} onChange={onInputChange}/>
+          ? <MenuMobile  onSubmit={onSearchSubmit} value={searchText} onChange={onInputChange}/>
+          : <MenuDesktop onSubmit={onSearchSubmit} value={searchText} onChange={onInputChange} onResetForm={onResetForm} logo={logo} />
       }
     </header>
   )
