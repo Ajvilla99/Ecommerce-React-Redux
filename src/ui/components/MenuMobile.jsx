@@ -10,7 +10,7 @@ import { IoMenu, IoSearchSharp, IoCartOutline, IoClose } from 'react-icons/io5';
 import { IoIosNotificationsOutline, IoIosArrowRoundBack, IoMdHeartEmpty, IoIosList } from "react-icons/io";
 import { LuUser2 } from "react-icons/lu";
 import { AiOutlineHome } from "react-icons/ai";
-import { SlHandbag } from "react-icons/sl";
+import { SlHandbag } from 'react-icons/sl';
 
 
 export const MenuMobile = ({ onSubmit, onChange, value }) => {
