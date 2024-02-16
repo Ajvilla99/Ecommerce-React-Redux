@@ -1,19 +1,19 @@
 export const categories = [
   {
     "id": 1,
-    "name": "Electronics",
+    "name": "Electronica",
     "description": "Electronic products and technological devices.",
     "image": "electronics.jpg"
   },
   {
     "id": 2,
-    "name": "Clothing",
+    "name": "Ropa",
     "description": "Fashion clothing for all ages.",
     "image": "clothing.jpg"
   },
   {
     "id": 3,
-    "name": "Home",
+    "name": "Hogar y Muebles",
     "description": "Home goods and decor items.",
     "image": "home.jpg"
   },
@@ -25,7 +25,7 @@ export const categories = [
   },
   {
     "id": 5,
-    "name": "Toys and Games",
+    "name": "Juegos y Juguetes",
     "description": "Toys for all ages.",
     "image": "toys.jpg"
   },
@@ -37,7 +37,7 @@ export const categories = [
   },
   {
     "id": 7,
-    "name": "Health and Beauty",
+    "name": "Belleza y Cuidado Personal",
     "description": "Products for health and personal care.",
     "image": "health.jpg"
   },
