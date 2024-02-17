@@ -1,3 +1,3 @@
 export * from './utilFunctions';
-export * from './';
-export * from './';
+export * from './getProductByCategory';
+export * from './getProductByName';

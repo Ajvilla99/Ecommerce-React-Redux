@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '../../assets/img/Logo.png'
+import Logo from '../../assets/img/logo1.png'
 import { Link } from 'react-router-dom'
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
 import { ImCheckboxUnchecked, ImCheckboxChecked } from "react-icons/im";

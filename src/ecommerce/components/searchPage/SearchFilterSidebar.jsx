@@ -12,7 +12,7 @@ import { useDisplaySize } from '../../../hooks';
 
 
 
-export const SearchFilterSidebar = () => {
+export const SearchFilterSidebar = ({ searchText }) => {
 
 
   const { width } = useDisplaySize()
@@ -56,7 +56,7 @@ export const SearchFilterSidebar = () => {
           && <div className='w-full flex flex-col gap-3'>
                 <div className='w-full h-12 flex items-center px-4'>
                   <IoSearchOutline className='text-xl text-gray-700 mr-2'/>
-                  <span className='text-xl text-gray-700'>carta</span>
+                  <span className='text-xl text-gray-700'>{searchText}</span>
                 </div>
                 <FilterSideBarDesktop categories={categories} />
               </div>

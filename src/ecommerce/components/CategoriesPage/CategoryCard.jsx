@@ -8,7 +8,7 @@ export const CategoryCard = ({ name, image }) => {
         <div className='w-full h-2/3 flex items-center justify-center p-3
                         lg:w-2/5 lg:h-full'>
             <img 
-                src='https://i.imgur.com/8KkhBqA.png' alt={name} 
+                src={image} alt={name} 
                 className='object-contain max-h-[75%]' />
         </div>
         <div className='w-full h-1/3 bg-white flex justify-center items-center

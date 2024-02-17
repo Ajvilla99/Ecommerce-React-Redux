@@ -18,11 +18,10 @@ export const MenuDesktop = ({ onSubmit, onChange, value, logo, onResetForm }) =>
   })
 
   const pathNavbar = [
-    { id: 'MN01', name: 'ofertas', to: '/categories' },
-    { id: 'MN02', name: 'historial', to: '/history' },
-    { id: 'MN03', name: 'vender', to: '/sell' },
-    { id: 'MN04', name: 'gamer', to: '/categories=games' },
-    // { id: 'MN05', name: 'Inicio', to: '/categories' },
+    { id: 'mn01', name: 'ofertas', to: '/categories' },
+    { id: 'mn02', name: 'historial', to: '/history' },
+    { id: 'mn03', name: 'vender', to: '/sell' },
+    { id: 'mn04', name: 'gamer', to: '/categories=games' },
   ]
 
   const userSettingOptions = [
@@ -37,8 +36,10 @@ export const MenuDesktop = ({ onSubmit, onChange, value, logo, onResetForm }) =>
         {/* Menu Top */}
         <div className='w-full h-14 flex items-center justify-between flex-nowrap'>
           <div className='w-40 h-full flex items-center justify-center overflow-hidden'>
-            <Link to={'/'}>
-              <img src={logo} alt='Logo' className='max-h-[90%]' />
+            <Link 
+              to={'/'}
+              className=''>
+                <img src={logo} alt='Logo' className='' />
             </Link>
           </div>
           <div className='w-[600px] h-full flex items-center'>
@@ -74,9 +75,11 @@ export const MenuDesktop = ({ onSubmit, onChange, value, logo, onResetForm }) =>
             <button className='w-10 h-10 flex items-center justify-center text-2xl text-menu-primary-light bg-menu-primary-light/20 hover:bg-menu-primary-light/40 duration-200 rounded-full'>
                 <IoIosNotificationsOutline />
             </button>
-            <button className='w-10 h-10 flex items-center justify-center text-2xl text-menu-primary-light bg-menu-primary-light/20 hover:bg-menu-primary-light/40 duration-200 rounded-full'>
+            <Link
+              to={'/cart'}
+               className='w-10 h-10 flex items-center justify-center text-2xl text-menu-primary-light bg-menu-primary-light/20 hover:bg-menu-primary-light/40 duration-200 rounded-full'>
                 <IoCartOutline />
-            </button>
+            </Link>
             <button
               onClick={()=>setviewMenu(prevstate => ({...prevstate, user: !prevstate.user }))}
               className='w-10 h-10 bg-white rounded-full overflow-hidden'>
@@ -113,13 +116,13 @@ export const MenuDesktop = ({ onSubmit, onChange, value, logo, onResetForm }) =>
         {/* Menu Bot */}
         <div className='w-full h-12 flex items-center justify-between text-menu-primary-light'>
           <div className='w-40'>
-            <Link className='w-full h-full flex items-center justify-center gap-1'>
-              <span className='text-2xl'>
+            <Link className='w-full h-full flex items-start justify-center gap-0'>
+              <span className='text-3xl'>
                 <IoLocationOutline />
               </span>
-              <div className='text-xs'>
-                <span>Enviar a Abrahan</span>
-                <p className='text-sm'>Calle 117 #10k-28</p>
+              <div className='flex flex-col gap-0'>
+                <span className='text-xs first-letter:uppercase'>ingresa tu</span>
+                <p className='text-sm'>ubicación</p>
               </div>
             </Link>
           </div>
@@ -145,6 +148,12 @@ export const MenuDesktop = ({ onSubmit, onChange, value, logo, onResetForm }) =>
                           </li>
                         ))
                       }
+                       <li className='w-full h-10 text-sm'>
+                          <Link to={`categories`}
+                            className='w-full h-full flex items-center px-5 hover:bg-menu-primary/70 hover:text-menu-primary-light'>
+                            <p className='first-letter:uppercase'>Ver todas las categorias</p>
+                          </Link>
+                        </li>
                     </ul>
                 </div>
               </li>

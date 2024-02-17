@@ -1,8 +1,11 @@
-// Router
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-
 // React
 import { useState } from 'react';
+
+// React Router Dom
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+
+// QueryString
+
 
 // Images
 import logo from '../../assets/img/logo1.png'
@@ -14,17 +17,22 @@ import { useDisplaySize, useForm } from '../../hooks';
 import { MenuDesktop, MenuMobile } from './';
 
 
-
 export const Navbar = () => {
 
   const navigate = useNavigate();
+  
+  const onLogout = () => {
+    navigate('');
+  }
 
   const { width } = useDisplaySize();
+
   const { searchText, formState, onInputChange, onResetForm } = useForm({ searchText: '' })
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
-    navigate(`search/?q=${ searchText.toLowerCase() }`)
+    if ( searchText.trim().length <= 2) return;
+    navigate(`search?q=${ searchText.toLowerCase() }`)
   }
 
   return (

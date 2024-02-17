@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom"
 
+// Icons
 import { PiAppleLogoFill } from "react-icons/pi";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+
+// Images
+import logo from '../../assets/img/logo1.png'
 
 
 export const Footer = () => {
@@ -11,8 +15,8 @@ export const Footer = () => {
       <div className="lg:flex lg:justify-between lg:py-[50px]">
         {/* Logo */}
         <div className='w-full py-4 lg:max-w-[25%]'>
-          <Link className='h-[45px] border-2 flex items-center justify-center'>
-            LOGO
+          <Link className='flex items-center justify-center'>
+            <img src={logo} alt="" />
           </Link>
         </div>
         <div className="flex flex-wrap justify-between gap-2 lg:flex-nowrap lg: lg: lg:">
@@ -66,7 +70,7 @@ export const Footer = () => {
         </div>
       </div>
       <hr className="border-[1.5px] border-gray-100"/>
-      <div className="py-[10px] flex lg:pt-[40px] lg:pb-[20px] lg:justify-between">
+      <div className="py-[10px] flex lg:pt-[40px] lg:pb-[20px] lg:justify-between text-menu-primary-light">
         <span className="text-left">&copy; { new Date().getFullYear() } All Right Reserves Ecommerce</span>
         <span className="text-right">Design By Abrahan Villa</span>
       </div>

@@ -3,18 +3,17 @@
 import { IoIosArrowUp } from 'react-icons/io';
 
 // Components
-import { ProductCardSearch } from './'
-import { useState } from 'react';
+import { ProductCardSearch } from './';
 
 
 
-export const ProductListWithSorting = ({ products }) => {
+export const ProductListWithSorting = ({ products, searchText }) => {
 
-  const [ stringOrdener, setStringOrdener ] = useState([
+  const stringOrdener = [
     { name: 'Más relevantes'}, 
     { name: 'Menor precio',}, 
     { name: 'Mayor precio',}, 
-    ])
+  ]
 
   return (
     <div className='w-full flex lg:flex-col gap-3
@@ -47,7 +46,7 @@ export const ProductListWithSorting = ({ products }) => {
       <ul className='w-full flex flex-col py-3 bg-white
                     lg:pb-3 lg:pt-0 lg:gap-0.5 lg:bg-transparent'>
         {
-          products.map(product => (
+          products.map( product => (
             <ProductCardSearch  key={product.id} {...product}/>
           ))
         }
