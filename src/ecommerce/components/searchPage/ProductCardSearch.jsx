@@ -25,7 +25,7 @@ export const ProductCardSearch = ({ name, price, image, discount, id }) => {
               className='w-1/2 h-full py-2.5 px-1  
                 lg:w-[calc(100%-192px)] lg:py-5'>
                 <Link
-                  to={`/product:${id}`}
+                  to={`/id:${id}`}
                   ref={productClick}
                   className='text-sm line-clamp-2 group-hover:text-actions-success duration-300 lg:text-base'
                 >

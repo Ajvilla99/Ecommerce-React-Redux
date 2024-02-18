@@ -21,6 +21,9 @@ export const ProductCard = ({ name, image, price, discount, id, full }) => {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
+    const productSlug = encodeURIComponent(name.toLowerCase().replace(/\s+/g, '-'));
+
+
   return (
     <li 
         onClick={onClick} className={`group p-1 w-full h-full bg-white cursor-pointer
@@ -32,7 +35,7 @@ export const ProductCard = ({ name, image, price, discount, id, full }) => {
             </div>
             <div className='w-full lg:h-1/2 px-2 pt-5 text-black/90'>
                 <Link
-                 to={`/${id}`}
+                 to={`/product/${id}-${productSlug}`}
                  ref={clickProduct}
                  className='text-sm line-clamp-2 mb-2 px-2 group-hover:text-actions-success duration-200'>
                     {name}
