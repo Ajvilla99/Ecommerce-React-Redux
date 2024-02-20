@@ -1,6 +1,6 @@
 export const products = [
   {
-    "id": "A1B2C3",
+    "id": "a1b2c3",
     "name": "Lavadora Samsung 22kg Panel Multicontrol Negra",
     "price": 3099900,
     "description": "Esta lavadora Samsung de alta capacidad y control multifunción en color negro es perfecta para hogares con grandes cargas de lavandería.",
@@ -8,6 +8,7 @@ export const products = [
     "category": "Electrodomésticos",
     "inventory": 2,
     "discount": 10,
+    "rating": 5,
     "features": {
       "Capacidad": "22 kg",
       "Color": "Negro",
@@ -15,7 +16,7 @@ export const products = [
     }
   },
   {
-    "id": "D4E5F6",
+    "id": "d4d5d6",
     "name": "Filtro Purificador de Agua Bioenergético Ecotrade 28 Litros",
     "price": 185380,
     "description": "El filtro purificador de agua Bioenergético Ecotrade de 28 litros ofrece una solución efectiva para obtener agua pura y limpia en tu hogar.",
@@ -23,6 +24,7 @@ export const products = [
     "category": "Electrodomésticos",
     "inventory": 30,
     "discount": 20,
+    "rating": 4.5,
     "features": {
       "Capacidad": "28 Litros",
       "Tecnología de Filtración": "Avanzada",
@@ -30,7 +32,7 @@ export const products = [
     }
   },
   {
-    "id": "G7H8I9",
+    "id": "e7e8e9",
     "name": "Asador Ahumador Barril Mini",
     "price": 377223,
     "description": "Asador ahumador de tamaño mini ideal para tus reuniones al aire libre.",
@@ -38,6 +40,7 @@ export const products = [
     "category": "Hogar",
     "inventory": 25,
     "discount": 10,
+    "rating": 3.5,
     "features": {
       "Tipo": "Asador Ahumador",
       "Tamaño": "Mini",
@@ -45,7 +48,7 @@ export const products = [
     }
   },
   {
-    "id": "J1K2L3",
+    "id": "f1f2f3",
     "name": "Monitor Led De 24 Con Panel Ips Y Diseño Sin Bordes Color Black",
     "price": 501000,
     "description": "Monitor LED de 24 pulgadas con panel IPS y diseño sin bordes en color negro.",
@@ -53,6 +56,7 @@ export const products = [
     "category": "",
     "inventory": 40,
     "discount": 30,
+    "rating": 4.8,
     "features": {
       "Tamaño de Pantalla": "24 pulgadas",
       "Tipo de Panel": "IPS",
@@ -62,7 +66,7 @@ export const products = [
     }
   },
   {
-    "id": "M4N5O6",
+    "id": "m4n5o6",
     "name": "Product 5",
     "price": 24.99,
     "description": "Descripción del Producto 5",
@@ -70,6 +74,7 @@ export const products = [
     "category": "Categoría 5",
     "inventory": 20,
     "discount": 25,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -77,7 +82,7 @@ export const products = [
     }
   },
   {
-    "id": "P7Q8R9",
+    "id": "p7q8r9",
     "name": "Product 6",
     "price": 34.99,
     "description": "Descripción del Producto 6",
@@ -85,6 +90,7 @@ export const products = [
     "category": "Categoría 6",
     "inventory": 15,
     "discount": 5,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -93,7 +99,7 @@ export const products = [
     }
   },
   {
-    "id": "S1T2U3",
+    "id": "s1t2u3",
     "name": "Product 7",
     "price": 45.99,
     "description": "Descripción del Producto 7",
@@ -101,6 +107,7 @@ export const products = [
     "category": "Categoría 7",
     "inventory": 35,
     "discount": 12,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -117,6 +124,7 @@ export const products = [
     "category": "Categoría 8",
     "inventory": 18,
     "discount": 8,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -134,6 +142,7 @@ export const products = [
     "category": "Categoría 9",
     "inventory": 28,
     "discount": 0,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -151,6 +160,7 @@ export const products = [
     "category": "Categoría 10",
     "inventory": 22,
     "discount": 18,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -166,6 +176,7 @@ export const products = [
     "category": "Categoría 11",
     "inventory": 16,
     "discount": 10,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -183,6 +194,7 @@ export const products = [
     "category": "Categoría 12",
     "inventory": 25,
     "discount": 22,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -200,6 +212,7 @@ export const products = [
     "category": "Categoría 13",
     "inventory": 10,
     "discount": 15,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -215,6 +228,7 @@ export const products = [
     "category": "Categoría 14",
     "inventory": 30,
     "discount": 40,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -231,6 +245,7 @@ export const products = [
     "category": "Categoría 15",
     "inventory": 12,
     "discount": 5,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -248,6 +263,7 @@ export const products = [
     "category": "Categoría 16",
     "inventory": 18,
     "discount": 20,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -264,6 +280,7 @@ export const products = [
     "category": "Categoría 17",
     "inventory": 22,
     "discount": 8,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -279,6 +296,7 @@ export const products = [
     "category": "Categoría 18",
     "inventory": 15,
     "discount": 15,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -296,6 +314,7 @@ export const products = [
     "category": "Categoría 19",
     "inventory": 28,
     "discount": 10,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -313,6 +332,7 @@ export const products = [
     "category": "Categoría 20",
     "inventory": 20,
     "discount": 25,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -329,6 +349,7 @@ export const products = [
     "category": "Categoría 21",
     "inventory": 18,
     "discount": 15,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -344,6 +365,7 @@ export const products = [
     "category": "Categoría 22",
     "inventory": 25,
     "discount": 30,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -361,6 +383,7 @@ export const products = [
     "category": "Categoría 23",
     "inventory": 15,
     "discount": 10,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",
@@ -376,6 +399,7 @@ export const products = [
     "category": "Categoría 24",
     "inventory": 40,
     "discount": 20,
+    "rating": 4.5,
     "features": {
       "Característica 1": "Valor 1",
       "Característica 2": "Valor 2",

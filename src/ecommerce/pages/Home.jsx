@@ -9,10 +9,7 @@ import { useSelector } from 'react-redux'
 export const Home = () => {
 
   const { categories } = useSelector(state => state.ecommerce);
-  const { width , height } = useDisplaySize()
-  
-  // TODO: 
-  // Solo para entregar datos
+  const { width , height } = useDisplaySize();
 
   return (
     <>

@@ -12,7 +12,7 @@ export const EcommerceRoutes = () => {
           <Route path='/categories' element={ <CategoriesPage /> } />
           <Route path='/cart' element={ <CartPage /> } />
           <Route path='/search' element={ <SearchPage /> } />
-          <Route path='/product/*' element={ <ProductPage /> } />
+          <Route path='/product/:id' element={ <ProductPage /> } />
       </Routes>
     <Footer/>
     </>

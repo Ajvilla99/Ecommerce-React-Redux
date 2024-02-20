@@ -35,7 +35,7 @@ export const ProductCard = ({ name, image, price, discount, id, full }) => {
             </div>
             <div className='w-full lg:h-1/2 px-2 pt-5 text-black/90'>
                 <Link
-                 to={`/product/${id}-${productSlug}`}
+                 to={`/product/${id}`}
                  ref={clickProduct}
                  className='text-sm line-clamp-2 mb-2 px-2 group-hover:text-actions-success duration-200'>
                     {name}

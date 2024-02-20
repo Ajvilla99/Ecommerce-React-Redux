@@ -1,12 +1,6 @@
 
 
-export const getProductById = ( data, productId ) => {
-    
-    const id = productId.toLowerCase().trim()
+export const getProductById = ( arraysData, id ) => {
 
-    if ( id.length === 0 ) return [];
-
-    return data.filter(
-        data => data.id.toLowerCase( ).includes(id)
-    )
+    return arraysData.find( data => data.id === id );
 }
