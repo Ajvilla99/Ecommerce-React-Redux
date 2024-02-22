@@ -6,7 +6,7 @@ export const products = [
     "description": "Esta lavadora Samsung de alta capacidad y control multifunción en color negro es perfecta para hogares con grandes cargas de lavandería.",
     "image": "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp",
     "category": "Electrodomésticos",
-    "inventory": 2,
+    "inventory": 1,
     "discount": 10,
     "rating": 5,
     "features": {
