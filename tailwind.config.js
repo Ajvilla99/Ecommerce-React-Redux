@@ -5,8 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        'desktop' : '1180px'
+      },
       colors: {
-        primary: "#365071",
+        primary: "#0F1C2E",
         secondary: "#FB6340",
         "primary-light": "#97CDF5",
         "secondary-light": "#FFA8B4",

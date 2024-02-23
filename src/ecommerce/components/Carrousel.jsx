@@ -10,7 +10,7 @@ export const Carrousel = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 1;
 
-  const [width, setWidth] = useState({width: 0})
+  const [ width, setWidth ] = useState({width: 0})
   const prueba = useRef(null)
 
   useEffect(() => {
