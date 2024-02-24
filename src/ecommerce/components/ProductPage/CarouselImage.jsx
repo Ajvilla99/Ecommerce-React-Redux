@@ -54,7 +54,7 @@ export const CarouselImage = ({ data = [] }) => {
                     </div>
                 ))
             }
-            <div className='bg-primary flex px-4 rounded-l py-2 gap-0.5 absolute right-0 top-3 text-white'>
+            <div className='bg-primary flex px-2 rounded-l py-0.5 gap-0.5 absolute right-0 top-3 text-white'>
                 <span>{counter}</span>
                 <span>/</span>
                 <span>{ data.length }</span> 
