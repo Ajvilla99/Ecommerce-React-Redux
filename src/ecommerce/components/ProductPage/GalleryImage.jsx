@@ -21,8 +21,6 @@ export const GalleryImage = ({ data }) => {
         })
     }
 
-
-
   return (
     <div className='min-w-[428px] h-[500px]'>
         <div className='w-full h-full flex'>

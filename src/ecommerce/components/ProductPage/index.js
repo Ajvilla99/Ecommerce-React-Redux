@@ -1,2 +1,3 @@
-export * from './CarouselImage.jsx'
-export * from './GalleryImage.jsx'
+export * from './CarouselImage'
+export * from './GalleryImage'
+export * from './FeaturesProduct'

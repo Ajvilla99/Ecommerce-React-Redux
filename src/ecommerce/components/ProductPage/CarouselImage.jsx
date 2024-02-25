@@ -45,7 +45,7 @@ export const CarouselImage = ({ data = [] }) => {
         </button>
         <div 
             ref={prueba}
-            className='w-full h-full flex items-center flex-nowrap overflow-hidden scroll-smooth'>
+            className='w-full h-full flex items-center flex-nowrap overflow-hidden scroll-smooth relative'>
             {
                 data.map(({id, image}, i)=>(
                     <div key={`prueba ${i}`} className='min-w-full min-h-full'>
@@ -54,7 +54,7 @@ export const CarouselImage = ({ data = [] }) => {
                     </div>
                 ))
             }
-            <div className='bg-primary flex px-2 rounded-l py-0.5 gap-0.5 absolute right-0 top-3 text-white'>
+            <div className='bg-primary flex px-2 rounded-r py-0.5 gap-0.5 absolute left-0 top-3 text-white'>
                 <span>{counter}</span>
                 <span>/</span>
                 <span>{ data.length }</span> 
