@@ -12,7 +12,9 @@ export const products = [
     "features": {
       "Capacidad": "22 kg",
       "Color": "Negro",
-      "Control": "Panel Multicontrol"
+      "Control": "Panel Multicontrol",
+      "Control": "Panel Multicontrol",
+
     }
   },
   {

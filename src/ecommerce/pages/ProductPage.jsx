@@ -10,17 +10,8 @@ import { useDisplaySize } from '../../hooks/useDisplaySize';
 // Functions
 import { formatNumber, getProductById, renderRatingStarts } from '../helpers'
 
-// Icons
-import { GoHeart, GoHeartFill } from "react-icons/go";
-import { FaAngleLeft } from 'react-icons/fa6';
-import { IoClose } from "react-icons/io5";
-
-import { SlArrowLeft } from "react-icons/sl";
-
 // Components
-import { CarouselImage } from '../components/ProductPage/CarouselImage';
-import { FeaturesProduct, GalleryImage } from '../components/ProductPage';
-import { ProductInteractionBar } from '../components/ProductPage/ProductInteractionBar';
+import { FeaturesProduct, GalleryImage, ProductInteractionBar, DescriptionProduct, CarouselImage, CommentSection } from '../components/ProductPage';
 
 // useEffect(() => {
 //   if (viewCant) {
@@ -40,17 +31,15 @@ export const ProductPage = () => {
   const product = getProductById( products, id );
   if ( !product ) { return <Navigate to={'/'}/>};
 
-  const { name, price, image, discount, rating, inventory, features } = product;
+  const { name, price, image, discount, rating, inventory, features, description, comments } = product;
 
   const stars = renderRatingStarts(rating);
   const priceFormat = formatNumber(price);
 
-  
-
 
   return (
     <>
-        <section className='w-full flex justify-center'>
+        <section className='w-full flex flex-col items-center'>
           <div className='w-full flex flex-col lg:w-desktop bg-white lg:flex-row lg:p-4 lg:mt-10 lg:rounded-md'>
               <section className='w-full'>
                 <div className='w-full lg:flex lg:flex-row-reverse'>
@@ -79,8 +68,10 @@ export const ProductPage = () => {
                   { width < 1024 ? <CarouselImage /> : <GalleryImage/> }
                   { width < 1024 && <ProductInteractionBar {...product} /> }       
                 </div>
-                <hr className='mx-10'/>                    
+                <hr className='mx-5 lg:mx-7'/>           
                 <FeaturesProduct features={features} />
+                <hr className='mx-5 lg:mx-7'/>              
+                <DescriptionProduct description={description} />           
               </section>
               { width >= 1024 &&
                   <div className='w-[320px] p-3 rounded-md border'>
@@ -88,7 +79,7 @@ export const ProductPage = () => {
                   </div>
               }
           </div>
-
+          <CommentSection rating={rating} comments={comments}/>
         </section>
     </>
   )

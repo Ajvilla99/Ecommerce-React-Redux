@@ -1,3 +1,6 @@
 export * from './CarouselImage'
-export * from './GalleryImage'
+export * from './CommentSection'
+export * from './DescriptionProduct'
 export * from './FeaturesProduct'
+export * from './GalleryImage'
+export * from './ProductInteractionBar'

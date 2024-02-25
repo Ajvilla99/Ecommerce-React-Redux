@@ -33,7 +33,7 @@ export const ProductInteractionBar = ({ price, discount, inventory }) => {
           </button>
         </div>
       </div>
-      <div className='button flex flex-col px-4 mt-4 lg:px-0'>
+      <div className='button flex flex-col px-4 mt-4 mb-5 lg:px-0'>
         <button className='w-full h-12 lg:h-8 bg-black/10 lg:bg-transparent flex justify-between items-center px-2 text-black/80 text-sm rounded-md first-letter:uppercase'>
             <div className='ml-2 lg:ml-0'>
             <span className='capitalize'>cantidad:</span>
@@ -42,8 +42,12 @@ export const ProductInteractionBar = ({ price, discount, inventory }) => {
             </div>
             <span className='rotate-180 text-sm text-actions-success'><FaAngleLeft /></span>
         </button>
-        <button className='w-full h-12 lg:h-10 lg:text-sm mt-5 font-medium bg-actions-success rounded-md text-white first-letter:uppercase'>comprar ahora</button>
-        <button className='w-full h-12 lg:h-10 lg:text-sm mt-2 font-medium bg-actions-success/30 rounded-md text-actions-success first-letter:uppercase'>agregar al carrito</button>
+        <button 
+          className='w-full h-12 lg:h-10 lg:text-sm mt-5 font-medium bg-actions-success rounded-md text-white first-letter:uppercase
+                      duration-300 hover:bg-actions-success/80'>comprar ahora</button>
+        <button 
+          className='w-full h-12 lg:h-10 lg:text-sm mt-2 font-medium bg-actions-success/30 rounded-md text-actions-success first-letter:uppercase
+                      duration-300 hover:bg-actions-success/50'>agregar al carrito</button>
     </div>
     </div>
   )

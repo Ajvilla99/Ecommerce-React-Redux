@@ -3,7 +3,7 @@ export const products = [
     "id": "a1b2c3",
     "name": "Lavadora Samsung Con Panel Multicontrol, 22kg Wf22c6400av Color Negro 110V",
     "price": 3099900,
-    "description": "Esta lavadora Samsung de alta capacidad y control multifunción en color negro es perfecta para hogares con grandes cargas de lavandería.",
+    "description": "Sumérgete en la eficiencia y el poder de limpieza con la Lavadora Samsung con Panel Multicontrol, modelo WF22C6400AV. Con una capacidad impresionante de 22 kg, esta lavadora automática de carga frontal es la aliada perfecta para familias numerosas o para quienes desean optimizar su tiempo lavando más prendas en menos ciclos. Su tecnología inverter no solo garantiza un funcionamiento silencioso, sino que también contribuye al ahorro energético, clasificándose en la categoría de eficiencia energética A./El diseño inteligente del Panel Multicontrol facilita la operación de la lavadora, permitiendo un acceso rápido y sencillo a todas las funciones y programas de lavado. Además, su sistema de centrifugado eficiente asegura que tu ropa salga con menos humedad, reduciendo así el tiempo de secado. La tecnología de esta lavadora está pensada para cuidar cada fibra de tus prendas, manteniéndolas como nuevas por más tiempo./ La Lavadora Samsung WF22C6400AV es un ejemplo de innovación y compromiso con el medio ambiente. Su impacto positivo se refleja en cada ciclo de lavado, ofreciendo un desempeño superior mientras cuida del planeta. Con esta lavadora, no solo estarás invirtiendo en un electrodoméstico de calidad, sino que también estarás apoyando un estilo de vida./ Descubre la combinación perfecta de funcionalidad, estilo y responsabilidad ambiental con la Lavadora Samsung WF22C6400AV. Haz que tu rutina de lavado sea una experiencia eficiente y placentera, y disfruta de más tiempo para ti y tus seres queridos. Con esta lavadora, cada día es una oportunidad para vestir prendas impecables y contribuir a un futuro más verde./ Aviso legal/ • Eficiencia energética A.",
     "image": "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp",
     "category": "Electrodomésticos",
     "inventory": 1,
@@ -12,8 +12,37 @@ export const products = [
     "features": {
       "Capacidad": "22 kg",
       "Color": "Negro",
-      "Control": "Panel Multicontrol"
-    }
+      "Control": "Panel Multicontrol",
+      "Tipo de carga": "Frontal",
+      "Producto con impacto positivo": "Si",
+      "Con tecnología inverter": "Sí",
+    },
+    "comments": [
+      {
+        "user": "usuario1",
+        "image": "",
+        "text": "¡Excelente lavadora! Lava la ropa de forma muy eficiente y el panel de control es muy fácil de usar.",
+        "rating": 5
+      },
+      {
+        "user": "usuario2",
+        "image": "",
+        "text": "Muy contento con la compra. La tecnología inverter funciona de maravilla y ahorra mucha energía.",
+        "rating": 4
+      },
+      {
+        "user": "usuario3",
+        "image": "",
+        "text": "No me gusta mucho el diseño, pero en cuanto a funcionamiento es impecable. Lava la ropa de forma muy efectiva.",
+        "rating": 3
+      },
+      {
+        "user": "usuario4",
+        "image": "",
+        "text": "La lavadora ha superado mis expectativas. Es muy silenciosa y el panel de control es intuitivo. La recomiendo totalmente.",
+        "rating": 5
+      }
+    ]
   },
   {
     "id": "d4d5d6",
@@ -29,7 +58,33 @@ export const products = [
       "Capacidad": "28 Litros",
       "Tecnología de Filtración": "Avanzada",
       "Uso": "Hogar"
-    }
+    },
+    "comments": [
+      {
+        "user": "Carlos Gonzales",
+        "image": "",
+        "text": "¡Excelente lavadora! Lava la ropa de forma muy eficiente y el panel de control es muy fácil de usar.",
+        "rating": 5
+      },
+      {
+        "user": "Cesar Hernandez",
+        "image": "",
+        "text": "Muy contento con la compra. La tecnología inverter funciona de maravilla y ahorra mucha energía.",
+        "rating": 4
+      },
+      {
+        "user": "Breyner Rodriguez",
+        "image": "",
+        "text": "No me gusta mucho el diseño, pero en cuanto a funcionamiento es impecable. Lava la ropa de forma muy efectiva.",
+        "rating": 3
+      },
+      {
+        "user": "Abrahan Villa",
+        "image": "",
+        "text": "La lavadora ha superado mis expectativas. Es muy silenciosa y el panel de control es intuitivo. La recomiendo totalmente.",
+        "rating": 5
+      }
+    ]
   },
   {
     "id": "e7e8e9",
