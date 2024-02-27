@@ -5,6 +5,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        growHeight: 'growHeight 1s ease-in-out',
+      },
+      keyframes: {
+        growHeight: {
+          '0%': { height: '0' },
+          '100%': { height: '380px' },
+        },
+      },
       width: {
         'desktop' : '1180px'
       },
