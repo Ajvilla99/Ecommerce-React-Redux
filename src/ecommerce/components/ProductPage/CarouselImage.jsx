@@ -31,14 +31,14 @@ export const CarouselImage = ({ data = [] }) => {
     <div className='w-full min-h-[500px] relative flex items-center'>
         <button
             onClick={btnPrev}
-            className='w-20 h-32 flex items-center justify-center text-6xl text-actions-success absolute left-0 z-30'>
+            className='w-20 h-32 flex items-center justify-center text-3xl text-actions-success absolute left-0 z-30'>
             <span className='rotate-'>
                 <SlArrowLeft />
             </span>
         </button>
         <button 
             onClick={btnNext}
-            className='w-20 h-32 flex items-center justify-center text-6xl text-actions-success absolute right-0 z-30'>
+            className='w-20 h-32 flex items-center justify-center text-3xl text-actions-success absolute right-0 z-30'>
             <span className='rotate-180'>
                 <SlArrowLeft />
             </span>
@@ -54,11 +54,11 @@ export const CarouselImage = ({ data = [] }) => {
                     </div>
                 ))
             }
-            <div className='bg-primary flex px-2 rounded-r py-0.5 gap-0.5 absolute left-0 top-3 text-white'>
-                <span>{counter}</span>
-                <span>/</span>
-                <span>{ data.length }</span> 
-            </div>
+        </div>
+        <div className='bg-primary flex px-2 rounded-r py-0.5 gap-0.5 absolute left-0 top-3 text-white'>
+            <span>{counter}</span>
+            <span>/</span>
+            <span>{ data.length }</span> 
         </div>
     </div>
   )

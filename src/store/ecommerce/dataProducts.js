@@ -19,25 +19,25 @@ export const products = [
     },
     "comments": [
       {
-        "user": "usuario1",
+        "user": "Raul Villalba",
         "image": "",
         "text": "¡Excelente lavadora! Lava la ropa de forma muy eficiente y el panel de control es muy fácil de usar.",
         "rating": 5
       },
       {
-        "user": "usuario2",
+        "user": "Romario Gomez",
         "image": "",
         "text": "Muy contento con la compra. La tecnología inverter funciona de maravilla y ahorra mucha energía.",
         "rating": 4
       },
       {
-        "user": "usuario3",
+        "user": "Frederick Castro",
         "image": "",
         "text": "No me gusta mucho el diseño, pero en cuanto a funcionamiento es impecable. Lava la ropa de forma muy efectiva.",
         "rating": 3
       },
       {
-        "user": "usuario4",
+        "user": "Cristian Marrugo",
         "image": "",
         "text": "La lavadora ha superado mis expectativas. Es muy silenciosa y el panel de control es intuitivo. La recomiendo totalmente.",
         "rating": 5
