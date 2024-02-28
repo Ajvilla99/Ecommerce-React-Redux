@@ -9,7 +9,7 @@ import { RxStarFilled } from 'react-icons/rx';
 export const CommentSection = ({rating, comments}) => {
 
     const [ likes, setLikes ] = useState(comments.map(() => false));
-    const [imageModal, setImageModal] = useState(false)
+    const [imageModal, setImageModal] = useState(false);
 
     const toggleLike = (index) => {
         setLikes(prevLikes => {
@@ -22,7 +22,7 @@ export const CommentSection = ({rating, comments}) => {
     const ratingFilterString = [ 'todas', '5', '4', '3', '2', '1'];
 
   return (
-    <section className='w-full lg:w-desktop p-4  flex flex-col lg:flex-row bg-white mt-1 rounded-md'>
+    <section className='w-full lg:w-desktop p-4 flex flex-col lg:flex-row lg:justify-around bg-white mt-1 rounded-md'>
         <div className='w-full lg:w-80 lg:p-5'>
             <div className=''>
                 <p className='font-semibold'>Reseñas del producto:</p>
@@ -41,11 +41,16 @@ export const CommentSection = ({rating, comments}) => {
                         <span>comentarios</span>
                     </span>
                     </div>
+                    <div className='hidden lg:block'>
+                        <div className='w-full h-10 overflow-hidden border-b'>
+
+                        </div>
+                    </div>
                 </div>
-                <div className='py-2'>
+                <div className='py-2 lg:hidden'>
                     <button
                         onClick={()=>setImageModal(true)}
-                        className=''>
+                        className='px-2 py-1.5 bg-actions-success/30 rounded-e-2xl rounded-s-2xl'>
                         filtrar
                     </button>
                 </div>
@@ -53,7 +58,7 @@ export const CommentSection = ({rating, comments}) => {
         </div>
         <hr className='lg:hidden'/>
         {/* ---- Comments ---- */}
-        <div className='pb-3 flex flex-col'>
+        <div className='w-full max-w-[700px] pb-3 flex flex-col'>
             {
                 comments.map(({user, text, image, rating}, i)=>(
                     <div key={`${user} comment ${i}`} className='mb-1 pt-3 relative'>
@@ -61,13 +66,15 @@ export const CommentSection = ({rating, comments}) => {
                             <div className='flex w-10 h-full bg-primary rounded-full overflow-hidden'>
                                 <img src={'https://i.imgur.com/773QfGA.jpg'} alt="" className='w-full h-full object-contain' />
                             </div>
-                            <span className='flex capitalize'>{user}</span>
+                            <div className='flex flex-col justify-center'>
+                                <span className='flex capitalize'>{user}</span>
+                                <span className='flex text-actions-success'>
+                                    { renderRatingStarts(rating).map(star => star) }
+                                </span>
+                            </div>
                         </div>
-                        <span className='flex text-actions-success my-1.5 pl-0.5'>
-                            { renderRatingStarts(rating).map(star => star) }
-                        </span>
                         <span className='text-sm text-black/80'>
-                            <p className='line-clamp-4 px-1'>{text}</p>
+                            <p className='line-clamp-4 px-1 mt-2'>{text}</p>
                         </span>
                         <div className='mt-2 mb-3'>
                             <button
@@ -81,6 +88,7 @@ export const CommentSection = ({rating, comments}) => {
                         <button className='absolute text-lg right-3 top-5 text-actions-success/80'>
                             <IoEllipsisVertical />
                         </button>
+                        {/* ---- Modal ---- */}
                         { imageModal && <div className='w-full h-screen bg-black/40 fixed bottom-0 right-0 top-0 left-0 z-10'></div> }
                         {
                             imageModal &&
