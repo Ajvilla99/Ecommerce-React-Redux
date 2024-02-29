@@ -14,6 +14,9 @@ module.exports = {
           '100%': { height: '380px' },
         },
       },
+      boxShadow: {
+        full: '0 0 6px rgba(0,0,0,.1),0 6px 16px rgba(0,0,0,.1)'
+      },
       width: {
         'desktop' : '1180px'
       },
