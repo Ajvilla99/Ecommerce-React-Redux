@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 
-export const ProductCard = ({ name, image, price, discount, id, full }) => {
+export const ProductCard = ({ name, images, price, discount, id, full }) => {
 
     const clickProduct = useRef(null);
     const onClick = () => {
@@ -31,7 +31,7 @@ export const ProductCard = ({ name, image, price, discount, id, full }) => {
         <div className='w-full h-full'>
             <div className='w-full lg:h-1/2 relative flex items-center justify-center'>
                 <span className='absolute w-full h-full left-0 top-0 bg-gray-600/5 lg:hidden'></span>
-                <img src={image} alt={`imagen de ${name}`} className='object-contain h-5/6  lg:h-full'/>
+                <img src={images[0]} alt={`imagen de ${name}`} className='object-contain h-5/6  lg:h-full'/>
             </div>
             <div className='w-full lg:h-1/2 px-2 pt-5 text-black/90'>
                 <Link

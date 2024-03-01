@@ -6,11 +6,12 @@ import { AiFillLike, AiOutlineLike } from 'react-icons/ai';
 import { IoEllipsisVertical, IoCloseOutline } from 'react-icons/io5';
 import { RxStarFilled } from 'react-icons/rx';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { LuUser2 } from 'react-icons/lu';
 
-export const CommentSection = ({rating, comments}) => {
+export const CommentSection = ({ rating, comments }) => {
 
     const [ likes, setLikes ] = useState(comments.map(() => false));
-    const [ viewState, setviewState ] = useState({ ordener: false, rating: false })
+    const [ viewState, setviewState ] = useState({ ordener: false, rating: false });
     const [ imageModal, setImageModal ] = useState(false);
 
     const toggleLike = (index) => {
@@ -60,6 +61,7 @@ export const CommentSection = ({rating, comments}) => {
         <hr className='lg:hidden'/>
         {/* //* COMMENT SECTION */ }
         <div className='w-full max-w-[700px] pb-3 flex flex-col lg:items-end'>
+        {/* //* COMMENT FILTER SECTION */ }
             <div className='hidden lg:flex w-full h-12 items-center'>
                 <div className='relative group'>
                     <button
@@ -99,13 +101,17 @@ export const CommentSection = ({rating, comments}) => {
                 </div>
             </div>
             {
-                comments.map(({user, text, image, rating}, i)=>(
+                comments.map(({user, text, photoUrl, rating}, i)=>(
                     <div key={`${user} comment ${i}`} className='mb-1 pt-3 relative w-full'>
                         <div className=' h-10 flex gap-2 items-center'>
-                            <div className='flex w-10 h-full bg-primary rounded-full overflow-hidden'>
-                                <img src={'https://i.imgur.com/773QfGA.jpg'} alt='' className='w-full h-full object-contain' />
+                            <div className='flex items-center justify-center w-10 h-full bg-actions-success/30 rounded-full overflow-hidden'>
+                                {
+                                    photoUrl
+                                        ? <img src={photoUrl} alt='' className='w-full h-full object-contain' />
+                                        : <span className='text-xl text-actions-success'><LuUser2 /></span>
+                                }
                             </div>
-                            <div className='flex flex-col justify-center'>
+                            <div className='flex flex-col justify-center text-sm'>
                                 <span className='flex capitalize'>{user}</span>
                                 <span className='flex text-actions-success'>
                                     { renderRatingStarts(rating).map(star => star) }
@@ -113,12 +119,12 @@ export const CommentSection = ({rating, comments}) => {
                             </div>
                         </div>
                         <span className='text-sm text-black/80'>
-                            <p className='line-clamp-4 px-1 mt-2 lg:pr-4'>{text}</p>
+                            <p className='line-clamp-4 px-1 mt-2 lg:mt-1 lg:px-12'>{text}</p>
                         </span>
-                        <div className='mt-2 mb-3'>
+                        <div className='mt-2 mb-3 lg:px-10'>
                             <button
                                 onClick={()=>toggleLike(i)}
-                                className='bg-actions-success/10 text-actions-success flex gap-2 items-center px-3 py-1.5 rounded-s-2xl rounded-e-2xl'>
+                                className='bg-actions-success/10 text-actions-success flex gap-2 items-center px-3 py-1.5 rounded-s-2xl rounded-e-2xl text-sm'>
                                 <span>{`Útil`}</span>
                                 <span className='text-base'>{ likes[i] ? <AiFillLike /> : <AiOutlineLike/> }</span>
                             </button>
@@ -127,13 +133,13 @@ export const CommentSection = ({rating, comments}) => {
                         <button className='absolute text-lg right-3 top-5 text-actions-success/80'>
                             <IoEllipsisVertical />
                         </button>
-                {/* //* ---- Modal ---- */}
+        {/* ---- Modal ---- */}
                         { imageModal && <div className='w-full h-screen bg-black/40 fixed bottom-0 right-0 top-0 left-0 z-10'></div> }
                         {
                             imageModal &&
                                 <div className='w-full h-[360px] p-5 fixed flex flex-col justify-between left-0 bottom-0 bg-white rounded-t-xl z-30 animate-growHeight'>
                                     <div className='flex flex-col relative'>
-                {/* //*---- Close Modal ---- */}
+        {/* ---- Close Modal ---- */}
                                         <button 
                                             onClick={()=>setImageModal(!imageModal)}
                                             className='absolute w-10 h-10 flex items-center justify-center -top-[65%] -right-[3%] text-2xl text-white'>

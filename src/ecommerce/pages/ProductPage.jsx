@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 // Custom Hooks
 import { useDisplaySize } from '../../hooks/useDisplaySize';
 
-
 // Functions
 import { formatNumber, getProductById, renderRatingStarts } from '../helpers'
 
@@ -31,7 +30,7 @@ export const ProductPage = () => {
   const product = getProductById( products, id );
   if ( !product ) { return <Navigate to={'/'}/>};
 
-  const { name, price, image, discount, rating, inventory, features, description, comments } = product;
+  const { name, price, images, discount, rating, inventory, features, description, comments } = product;
 
   const stars = renderRatingStarts(rating);
   const priceFormat = formatNumber(price);
@@ -45,19 +44,20 @@ export const ProductPage = () => {
                 <div className='w-full lg:flex lg:flex-row-reverse'>
                   <div className='w-full flex flex-col lg:flex-col-reverse lg:h-fit'>
             {/* ---- Price And Inventory ---- */}
-                    <div className='w-full flex justify-between lg:justify-start lg:gap-3 my-2 px-4'>
+                    <div className='w-full flex lg:flex-col justify-between lg:justify-start lg:gap-3 my-2 px-4'>
                         <span className='text-black/60 text-sm'>
-                          Nuevo |  Disponible {inventory}
+                          Nuevo | {inventory} Disponible
                         </span>
                         <span className='flex items-center gap-1 text-sm'>
                           <span>{rating}</span>
                           <span className='flex text-actions-success'>{ stars.map( star => star ) }</span>
                           <span>({11})</span>
                         </span>
-                        { width >= 1024 &&
-                            <div className=''>
-
-                            </div>
+                        { width >= 1024 && 
+                            <span className='flex gap-1'>
+                              <span className='text-2xl'>$ {formatNumber(price)}</span>
+                              { discount && <span className='text-actions-discount'>{discount}% OFF</span>}
+                            </span>
                         }
                     </div>
             {/* ---- Name ---- */}
@@ -65,7 +65,7 @@ export const ProductPage = () => {
                       <span>{name}</span>
                     </div>
                   </div>
-                  { width < 1024 ? <CarouselImage /> : <GalleryImage/> }
+                  { width < 1024 ? <CarouselImage {...product} /> : <GalleryImage {...product} /> }
                   { width < 1024 && <ProductInteractionBar {...product} /> }       
                 </div>
                 <hr className='mx-5 lg:mx-7'/>           
