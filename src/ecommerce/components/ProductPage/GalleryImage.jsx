@@ -23,18 +23,18 @@ export const GalleryImage = ({ images, name, id  }) => {
                     images.map(( image, index ) => (
                         <button 
                             onMouseEnter={() => handleHover(index, image)}
-                            key={`Imagen de ${id}`} className={`w-full h-12 rounded-md border mb-3
+                            key={`Imagen de ${id}`} className={`w-full h-12 rounded-md border mb-3 overflow-hidden
                                 ${ selectedImage.selected === index ? 'border-2 border-actions-success' : 'border-black/30' }`}>
                             <div className='w-full h-full flex items-center justify-center'>
-                                <img src={image} alt='' className='max-w-[80%] object-contain' />
+                                <img src={image} alt='' className='max-w-[80%] w-10/12 object-contain' />
                             </div>
                         </button>
                     ))
                 }
             </div>
-            <div className='w-[380px] flex items-center justify-center'>
+            <div className='w-[400px] flex items-center justify-center'>
                 <img src={ selectedImage.imageSelected || images[0] } alt={`foto del producto`} 
-                    className='p-4 w-full h-full object-cover'/>
+                    className='p-4 w-full h-full object-contain'/>
             </div>
         </div>
     </div>

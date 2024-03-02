@@ -26,7 +26,7 @@ export const CommentSection = ({ rating, comments }) => {
     const ratingFilterStringDesk = [ 'todas', '1', '2', '3', '4', '5'];
 
   return (
-    <section className='w-full lg:w-desktop p-4 lg:p-10 flex flex-col lg:flex-row lg:justify-between bg-white mt-1 rounded-md'>
+    <section className='w-full p-4 lg:p-10 flex flex-col lg:flex-row lg:justify-between bg-white mt-1 rounded-md'>
         {/* -------- FILTER SECTION -------- */}
         <div className='w-full lg:w-80 lg:p-5'>
             <div className=''>
@@ -36,7 +36,7 @@ export const CommentSection = ({ rating, comments }) => {
                <div className='w-full'>
                 <div className='flex items-center gap-0.5 text-actions-success'>
                         <span className='flex gap-1 text-5xl font-semibold'>
-                            <span>{rating.toFixed(1)}</span>
+                            <span>{ rating.toFixed(1)}</span>
                         </span>
                         <div>
                             <span className='flex text-xl lg:gap-0.5'>

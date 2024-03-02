@@ -5,7 +5,10 @@ export const products = [
     "price": 3099900,
     "description": "Sumérgete en la eficiencia y el poder de limpieza con la Lavadora Samsung con Panel Multicontrol, modelo WF22C6400AV. Con una capacidad impresionante de 22 kg, esta lavadora automática de carga frontal es la aliada perfecta para familias numerosas o para quienes desean optimizar su tiempo lavando más prendas en menos ciclos. Su tecnología inverter no solo garantiza un funcionamiento silencioso, sino que también contribuye al ahorro energético, clasificándose en la categoría de eficiencia energética A./El diseño inteligente del Panel Multicontrol facilita la operación de la lavadora, permitiendo un acceso rápido y sencillo a todas las funciones y programas de lavado. Además, su sistema de centrifugado eficiente asegura que tu ropa salga con menos humedad, reduciendo así el tiempo de secado. La tecnología de esta lavadora está pensada para cuidar cada fibra de tus prendas, manteniéndolas como nuevas por más tiempo./ La Lavadora Samsung WF22C6400AV es un ejemplo de innovación y compromiso con el medio ambiente. Su impacto positivo se refleja en cada ciclo de lavado, ofreciendo un desempeño superior mientras cuida del planeta. Con esta lavadora, no solo estarás invirtiendo en un electrodoméstico de calidad, sino que también estarás apoyando un estilo de vida./ Descubre la combinación perfecta de funcionalidad, estilo y responsabilidad ambiental con la Lavadora Samsung WF22C6400AV. Haz que tu rutina de lavado sea una experiencia eficiente y placentera, y disfruta de más tiempo para ti y tus seres queridos. Con esta lavadora, cada día es una oportunidad para vestir prendas impecables y contribuir a un futuro más verde./ Aviso legal/ • Eficiencia energética A.",
     "images": [
-      "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp"
+      "https://http2.mlstatic.com/D_Q_NP_2X_724288-MLU73557327279_122023-AB.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_755315-MLU74061325316_012024-O.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_607498-MLU73465078362_122023-O.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_988065-MLU73465078316_122023-O.webp",
     ],
     "category": "Electrodomésticos",
     "inventory": 1,
@@ -53,8 +56,8 @@ export const products = [
     "description": "El filtro purificador de agua Bioenergético Ecotrade de 28 litros ofrece una solución efectiva para obtener agua pura y limpia en tu hogar./Filtro Purificador de Agua Bioenergético Con Capacidad de 28 Litros./ Principal función: brindar agua alcalina portable en 99.9%/Repuestos:/Disponemos y garantizamos de todos los repuestos para nuestros Filtros.//Disfruta: Agua Natural, Alcalina, enriquecida con minerales./Beneficios/El 70% de nuestro cuerpo y el 80% en un niño es agua. El secreto de una buena calidad de vida está en tomar 5 vasos grandes diarios de agua alcalina sin cloro Ayuda a Prevenir:/Causas por la que envejecemos, enfermamos y morimos:/Hiperadicificación: (Acidez y toxinas acumuladas en la sangre y tejidos de los órganos)/Deshidratación: (falta de agua en el cuerpo), radicales libres (toxinas)./Elimina y Retira:/1) Radicales libres que nos envejecen y nos enferman./2) Virus, Bacterias, Quistes y Protozoos./3) Metales Pesados: Mercurio (Hg), Bromo (Br), Plomo (Pb) entre otros../4) Cloro en un 99.9%./5) Flúor en un 99.9%./6) Elementos Orgánicos./7) Ácidos del agua/Comparación del Agua de La llave:/A) Contiene muchos minerales en disolución que tornan el agua más pesada y dura/B) Poco hidratante/C) no neutraliza la acidez/D) Posee cloro que perjudica la flora intestinal/VS/Agua filtrada por un Purificador Ecotrade Filters/A) Agua suave, liviana sin color olor o sabor/B) Lleva más nutrientes y oxígeno a las células del cuerpo./C) neutraliza la acidez, hidrata 6 veces más que el agua de la llave/D) Una de las principales funciones es retirar el cloro gracias a sus dos capas de carbón activado de cáscara de coco.",
     "images": [
       "https://http2.mlstatic.com/D_Q_NP_2X_868154-MCO73494261492_122023-AB.webp",
-      "https://http2.mlstatic.com/D_Q_NP_836989-MCO73494261502_122023-R.webp",
-      "https://http2.mlstatic.com/D_Q_NP_787539-MCO73494261498_122023-R.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_836989-MCO73494261502_122023-O.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_787539-MCO73494261498_122023-O.webp",
       "https://http2.mlstatic.com/D_Q_NP_973628-MCO73494261494_122023-R.webp",
     ],
     "category": "Electrodomésticos",
