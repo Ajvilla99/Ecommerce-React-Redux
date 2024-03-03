@@ -20,7 +20,7 @@ export const ProductPage = () => {
 
   const { counter, increment, decrement } = useCounter(1);
 
-  const { id } = useParams()
+  const { id } = useParams();
   const product = getProductById( products, id );
   if ( !product ) { return <Navigate to={'/'}/>};
 
@@ -43,7 +43,14 @@ export const ProductPage = () => {
                 <hr />
                 <CommentSection {...product} />
               </section>
-              { width >= 1024 && <ProductInteractionBar {...product} counterProduct={counter} />}
+              { width >= 1024 && 
+                  <ProductInteractionBar
+                    {...product}
+                    counterProduct={counter}
+                    increment={increment}
+                    decrement={decrement}
+                  />
+              }
           </div>
         </section>
     </>

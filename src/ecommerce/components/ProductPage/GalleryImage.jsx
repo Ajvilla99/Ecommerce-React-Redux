@@ -8,7 +8,6 @@ export const GalleryImage = ({ images, name, id  }) => {
     });
 
     const handleHover = ( index, image ) => {
-        console.log({image});
         setSelectedImage({
             selected: index,
             imageSelected: image
@@ -16,25 +15,27 @@ export const GalleryImage = ({ images, name, id  }) => {
     }
 
   return (
-    <div className='min-w-[428px] h-[500px]'>
+    <div className='w-full'>
         <div className='w-full h-full flex'>
-            <div className='w-12 h-full pt-4'>
+            <div className='w-14 h-full pt-4 flex flex-col gap-2'>
                 {
                     images.map(( image, index ) => (
-                        <button 
-                            onMouseEnter={() => handleHover(index, image)}
-                            key={`Imagen de ${id}`} className={`w-full h-12 rounded-md border mb-3 overflow-hidden
-                                ${ selectedImage.selected === index ? 'border-2 border-actions-success' : 'border-black/30' }`}>
-                            <div className='w-full h-full flex items-center justify-center'>
-                                <img src={image} alt='' className='max-w-[80%] w-10/12 object-contain' />
-                            </div>
+                        <button
+                            onMouseEnter={()=>handleHover( index, image )}
+                            className={`min-w-14 max-w-14 min-h-14 max-h-14 flex items-center justify-center rounded-md border-2 overflow-hidden
+                                        ${ selectedImage.selected === index ? 'border-2 border-actions-success' : '' }`}>
+                            <figure className=''>
+                                <img src={image} alt={`imagen de  ${name}`}
+                                    className='max-h-14 max-w-14 object-contain p-2'
+                                />
+                            </figure>
                         </button>
                     ))
                 }
             </div>
-            <div className='w-[400px] flex items-center justify-center'>
+            <div className='w-full max-h-[500px] flex items-center justify-center'>
                 <img src={ selectedImage.imageSelected || images[0] } alt={`foto del producto`} 
-                    className='p-4 w-full h-full object-contain'/>
+                    className='p-10 w-full h-full object-contain'/>
             </div>
         </div>
     </div>
